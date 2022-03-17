@@ -25,7 +25,7 @@
                                 : 'text-blue-100 hover:bg-white/[0.12] hover:text-white',
                         ]"
                     >
-                        Общие настройки
+                        Заказы
                     </button>
                 </Tab>
                 <Tab as="template">
@@ -38,7 +38,7 @@
                                 : 'text-blue-100 hover:bg-white/[0.12] hover:text-white',
                         ]"
                     >
-                        Юзеры
+                        Пользователи
                     </button>
                 </Tab>
                 <Tab as="template">
@@ -63,7 +63,7 @@
                 ><total-data></total-data></TabPanel>
                 <TabPanel
                 :class="[
-                    'bg-gray-200 rounded-xl p-3'
+                    'bg-gray-100 rounded-xl p-3'
                 ]"
                 ><settings></settings></TabPanel>
                 <TabPanel
