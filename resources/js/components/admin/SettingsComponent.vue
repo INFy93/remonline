@@ -154,7 +154,9 @@
                 </div>
             </div>
         </div>
-
+        <story
+            ref="openStoryPopup"
+        ></story>
         <div v-if="!ordersData">
             <div
                 class="p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800"
@@ -227,7 +229,7 @@
             <tbody class="bg-white">
                 <tr
                     class="number hover:bg-gray-200 transition-all duration-400"
-                    @dblclick="openEdit(order.id)"
+                     @dblclick="openStory(order.id)"
                     v-for="order in ordersData.data"
                     :key="order.id"
                 >
@@ -345,6 +347,7 @@
 <script>
 import _ from "lodash";
 import LaravelVuePagination from "laravel-vue-pagination";
+import { useToast } from "vue-toastification";
 import { ref } from "vue";
 import axios from "axios";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
@@ -352,6 +355,12 @@ import { ChevronDownIcon } from "@heroicons/vue/solid";
 import moment, { duration } from "moment";
 moment.locale("ru");
 export default {
+     setup() {
+        const toast = useToast();
+        return {
+            toast,
+        };
+    },
     data: function () {
         return {
             ordersData: {},
@@ -430,6 +439,11 @@ export default {
                     this.ordersData = response.data;
                     console.log(this.is_admin);
                 });
+        },
+        openStory(id) {
+            this.$refs.openStoryPopup.openToStory(id);
+            this.order_id = id;
+            //console.log(this.order_id)
         },
         deleteOrders() {
             axios.get("/orders/massDelete/" + this.checked).then((response) => {

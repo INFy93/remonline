@@ -1098,6 +1098,9 @@ input:checked + .toggle-bg {
 .max-w-xl {
   max-width: 36rem;
 }
+.max-w-screen-md {
+  max-width: 768px;
+}
 .flex-auto {
   flex: 1 1 auto;
 }

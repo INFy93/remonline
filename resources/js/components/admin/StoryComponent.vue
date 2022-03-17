@@ -35,204 +35,84 @@
                             leave-to="opacity-0 scale-95"
                         >
                             <div
-                                class="inline-block w-full max-w-screen-lg p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
+                                class="inline-block w-full max-w-screen-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
                             >
                                 <div
                                     class="flex justify-between items-start mb-2 rounded-t border-b dark:border-gray-600"
                                 >
                                     <DialogTitle
                                         as="h2"
-                                        class=" flex-start text-xl font-medium leading-6 text-gray-900"
+                                        class="flex-start text-xl font-medium leading-6 text-gray-900"
                                     >
-                                        Редактировать заказ: {{order.client_login}}
-
+                                        Просмотр истории:
+                                        {{ order.client_login }}
                                     </DialogTitle>
-                                    <div id="printMe" class="hidden">
-                                        <print-component :userdata="order"></print-component>
-                                    </div>
                                     <div class="mb-2 space-x-4 float-right">
-                                    <button
-                                        type="button"
-                                        class="inline-flex justify-items-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                                        @click="print"
-                                    >
-                                        Печать
-                                    </button>
-                                        </div>
+                                    </div>
                                 </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="mt-6">
-                                        <form>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="client_login"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Логин (или ФИО, если не наш
-                                                    абон)*</label
+                                <div class="grid">
+                                    <div class="mt-2">
+                                        <div v-if="!story.length">
+                                            <img
+                                                src="/storage/img/load_table.svg"
+                                                style="width: 15%; margin: 0 auto;"
+                                            />
+                                        </div>
+                                        <div
+                                            v-else
+                                            v-for="(event, i) in story"
+                                            :key="event.id"
+                                            class="text-sm"
+                                        >
+                                            <div
+                                                v-if="i == '0'"
+                                                class="mt-2 mb-2"
+                                            >
+                                                <div
+                                                    class="block ml-auto mr-auto"
                                                 >
-                                                <input
-                                                    type="text"
-                                                    v-model="order.client_login"
-                                                    @keyup="searchLogins"
-                                                    id="cleint_login"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Логин или имя клиента"
-                                                    required
-                                                />
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="clent_phone"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Телефон*</label
-                                                >
-                                                <input
-                                                    v-maska="
-                                                        '+7 (###) ###-##-##'
-                                                    "
-                                                    type="tel"
-                                                    v-model="order.client_phone"
-                                                    id="clent_phone"
-                                                    name="phone"
-                                                    required
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Телефон"
-                                                />
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="product"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Тип устройства*</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    v-model="order.product"
-                                                    id="product"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    required
-                                                    placeholder="ПК, нотубук, роутер..."
-                                                />
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="model"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Бренд*</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    v-model="order.model"
-                                                    id="model"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    required
-                                                    placeholder="Asus, Acer, черный/белый/.. сис"
-                                                />
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="model_full_name"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Модель</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    v-model="
-                                                        order.model_full_name
-                                                    "
-                                                    id="model_full_name"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="B500, RB950Ui..."
-                                                />
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="malfunction"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Неисправность*</label
-                                                >
-                                                <textarea
-                                                    v-model="order.malfunction"
-                                                    id="malfunction"
-                                                    rows="4"
-                                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Перенастройка ОС и так далее..."
-                                                ></textarea>
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="appearance"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Внешний вид</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    v-model="order.appearance"
-                                                    id="appearance"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                />
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="product_complection"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Комплектация</label
-                                                >
-                                                <textarea
-                                                    v-model="
-                                                        order.product_complection
-                                                    "
-                                                    id="product_complection"
-                                                    rows="4"
-                                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Ноут + зарядка и тд..."
-                                                ></textarea>
-                                            </div>
-                                            <div class="mb-6">
-                                                <label
-                                                    for="marks"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                                    >Заметки</label
-                                                >
-                                                <textarea
-                                                    v-model="order.marks"
-                                                    id="marks"
-                                                    rows="4"
-                                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Какую ОС ставить или комменты о клиенте :)"
-                                                ></textarea>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="mt-6 ml-3">
-                                    История
-                                     <div v-if="!story"> <img src="/storage/img/load_table.svg" style="width: 15%"> </div>
-                                    <div v-else v-for="(event, i) in story" :key="event.id" class="text-sm">
-                                        <div v-if="i == '0'" class="mt-2 mb-2">
-                                            <div class="block ml-auto mr-auto">
+                                                    <span>
+                                                        <strong>Cоздан:</strong>
+                                                    </span>
+                                                </div>
+
                                                 <span>
-                                                    <strong>Cоздан:</strong>
+                                                    <i>{{
+                                                        event.users.name
+                                                    }}</i>
+                                                    ->
+                                                    {{
+                                                        dateFormat(
+                                                            event.created_at
+                                                        )
+                                                    }}
+                                                </span>
+                                                <div class="mt-3"></div>
+                                            </div>
+                                            <div v-else class="mt-2 mb-2">
+                                                <div
+                                                    class="block ml-auto mr-auto"
+                                                >
+                                                    <span>
+                                                        <strong>{{
+                                                            event.statuses.name
+                                                        }}</strong>
+                                                    </span>
+                                                </div>
+
+                                                <span>
+                                                    <i>{{
+                                                        event.users.name
+                                                    }}</i>
+                                                    ->
+                                                    {{
+                                                        dateFormat(
+                                                            event.created_at
+                                                        )
+                                                    }}
                                                 </span>
                                             </div>
-
-                                            <span>
-                                                <i>{{ event.users.name }}</i> -> {{ dateFormat(event.created_at) }}
-                                            </span>
-                                            <div class="mt-3"></div>
                                         </div>
-                                       <div v-else class="mt-2 mb-2">
-                                            <div class="block ml-auto mr-auto">
-                                                <span>
-                                                    <strong>{{ event.statuses.name }}</strong>
-                                                </span>
-                                            </div>
-
-                                            <span>
-                                                <i>{{ event.users.name }}</i> -> {{ dateFormat(event.created_at) }}
-                                            </span>
-                                        </div>
-
-                                    </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 flex space-x-4 float-right">
@@ -243,13 +123,6 @@
                                     >
                                         Закрыть
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="inline-flex justify-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                                        @click="editOrder(order.id)"
-                                    >
-                                       Обновить
-                                    </button>
                                 </div>
                             </div>
                         </TransitionChild>
@@ -259,3 +132,78 @@
         </TransitionRoot>
     </div>
 </template>
+<script>
+import axios from "axios";
+import { ref } from "vue";
+import { useToast } from "vue-toastification";
+import { Menu, MenuItems, MenuItem } from "@headlessui/vue";
+import moment, { duration } from "moment";
+moment.locale("ru");
+import {
+    TransitionRoot,
+    TransitionChild,
+    Dialog,
+    DialogOverlay,
+    DialogTitle,
+} from "@headlessui/vue";
+export default {
+    data: function () {
+        return {
+            order: {
+                client_login: "",
+            },
+            show: false,
+            clientData: {},
+            order_id: "",
+            story: {}
+        };
+    },
+    components: {
+        TransitionRoot,
+        TransitionChild,
+        Dialog,
+        DialogOverlay,
+        DialogTitle,
+        MenuItems,
+        MenuItem,
+        Menu,
+    },
+    setup() {
+        const isOpen = ref(false);
+        // Get toast interface
+        const toast = useToast();
+        return {
+            isOpen,
+            closeModal() {
+                isOpen.value = false;
+            },
+            openModal() {
+                isOpen.value = true;
+            },
+            toast,
+        };
+    },
+    methods: {
+         dateFormat: function (value) {
+            if (value) {
+                return moment(String(value))
+                    .format("lll", { trim: false, useGrouping: false })
+                    .replace(/,/g, "");
+            }
+         },
+        openToStory(id) {
+            this.story = {}
+            this.openModal();
+            axios.all([
+                 axios.get("/order/edit/" + id),
+                 axios.get("/order/story/" + id)
+            ]).then(axios.spread((data1, data2) => {
+
+            this.order.client_login = data1.data.client_login;
+                this.story = data2.data;
+                console.log(this.story)
+            }));
+        },
+    },
+};
+</script>
