@@ -23239,7 +23239,6 @@ moment__WEBPACK_IMPORTED_MODULE_3___default().locale("ru");
       axios__WEBPACK_IMPORTED_MODULE_0___default().all([axios__WEBPACK_IMPORTED_MODULE_0___default().get("/order/edit/" + id), axios__WEBPACK_IMPORTED_MODULE_0___default().get("/order/story/" + id)]).then(axios__WEBPACK_IMPORTED_MODULE_0___default().spread(function (data1, data2) {
         _this.order.client_login = data1.data.client_login;
         _this.story = data2.data;
-        console.log(_this.story);
       }));
     }
   }

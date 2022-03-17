@@ -201,7 +201,6 @@ export default {
 
             this.order.client_login = data1.data.client_login;
                 this.story = data2.data;
-                console.log(this.story)
             }));
         },
     },
