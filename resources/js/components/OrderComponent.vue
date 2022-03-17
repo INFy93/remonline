@@ -110,32 +110,49 @@
                 </Menu>
             </div>
             <div v-if="selectPage">
-            <div class="mb-2" v-if="selectAll">
-                {{
-                    declOfNum(checked.length, ["Выбран", "Выбрано", "Выбрано"])
-                }}
-                <strong>{{ checked.length }}</strong>
-                {{
-                    declOfNum(checked.length, ["заказ", "заказа", "заказов"])
-                }}
-                (это все, что есть...).
+                <div class="mb-2" v-if="selectAll">
+                    {{
+                        declOfNum(checked.length, [
+                            "Выбран",
+                            "Выбрано",
+                            "Выбрано",
+                        ])
+                    }}
+                    <strong>{{ checked.length }}</strong>
+                    {{
+                        declOfNum(checked.length, [
+                            "заказ",
+                            "заказа",
+                            "заказов",
+                        ])
+                    }}
+                    (это все, что есть...).
+                </div>
+                <div class="mb-2" v-else>
+                    {{
+                        declOfNum(checked.length, [
+                            "Выбран",
+                            "Выбрано",
+                            "Выбрано",
+                        ])
+                    }}
+                    <strong>{{ checked.length }}</strong>
+                    {{
+                        declOfNum(checked.length, [
+                            "заказ",
+                            "заказа",
+                            "заказов",
+                        ])
+                    }}. Выбрать все <strong>{{ ordersData.total }}</strong
+                    >?
+                    <a
+                        href="#"
+                        @click.prevent="selectAllOrders"
+                        class="text-blue-600 hover:underline hover:text-blue-700"
+                        >Выбрать</a
+                    >
+                </div>
             </div>
-            <div class="mb-2" v-else>
-                {{
-                    declOfNum(checked.length, ["Выбран", "Выбрано", "Выбрано"])
-                }}
-                <strong>{{ checked.length }}</strong>
-                {{ declOfNum(checked.length, ["заказ", "заказа", "заказов"]) }}.
-                Выбрать все <strong>{{ ordersData.total }}</strong
-                >?
-                <a
-                    href="#"
-                    @click.prevent="selectAllOrders"
-                    class="text-blue-600 hover:underline hover:text-blue-700"
-                    >Выбрать</a
-                >
-            </div>
-        </div>
         </div>
 
         <div v-if="!ordersData">
@@ -514,9 +531,9 @@ export default {
                 this.selectAll = false;
             }
         },
-        checked: function(value) {
+        checked: function (value) {
             this.url = "/orders/export/" + this.checked;
-        }
+        },
     },
     methods: {
         selectAllOrders() {
@@ -549,11 +566,9 @@ export default {
         deleteOrders() {
             axios.get("/orders/massDelete/" + this.checked).then((response) => {
                 if (response.status == 204) {
-
-                        this.toast.success("Выбранные заказы успешно удалены.");
-                        this.checked = [];
-                        this.getOrders();
-
+                    this.toast.success("Выбранные заказы успешно удалены.");
+                    this.checked = [];
+                    this.getOrders();
                 } else {
                     this.toast.error("Ошибка удаления заказов.");
                 }
