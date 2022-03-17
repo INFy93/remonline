@@ -23279,10 +23279,8 @@ __webpack_require__.r(__webpack_exports__);
     getData: function getData() {
       var _this = this;
 
-      console.log(this.totalData.length);
       axios__WEBPACK_IMPORTED_MODULE_1___default().get("/dashboard/total").then(function (response) {
         _this.totalData = response.data;
-        console.log(Object.keys(_this.totalData).length);
       });
     },
     wordsFormat: function wordsFormat(number, titles) {

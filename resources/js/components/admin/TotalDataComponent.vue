@@ -27,10 +27,8 @@ export default {
     },
     methods: {
         getData() {
-            console.log(this.totalData.length)
             axios.get("/dashboard/total").then((response) => {
                 this.totalData = response.data
-                console.log(Object.keys(this.totalData).length)
             })
         },
         wordsFormat: function (number, titles) {
