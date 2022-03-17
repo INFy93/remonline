@@ -24367,7 +24367,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                   return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                     href: "#",
-                    onclick: "confirm('Are you sure you wanna delete this Record?') || event.stopImmediatePropagation()",
+                    onclick: "confirm('Удалить выбранные заказы?') || event.stopImmediatePropagation()",
                     status_id: "1",
                     onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
                       return $options.deleteOrders && $options.deleteOrders.apply($options, arguments);
