@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title')Заказы@endsection
+@section('title')Настройки@endsection
 
 @section('content')
 
