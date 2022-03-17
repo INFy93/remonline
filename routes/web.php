@@ -60,6 +60,7 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
     /* dashboard main page */
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     Route::get('/total', [AdminController::class, 'getTotalData']);
+    Route::get('/options', [AdminController::class, 'getAllSettings']);
     /* temporary */
     Route::get('/st', function () {
        Artisan::call('storage:link');

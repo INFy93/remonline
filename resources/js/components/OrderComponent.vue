@@ -179,6 +179,7 @@
             <thead>
                 <tr>
                     <th
+                        v-if="selectedService == userService || is_admin"
                         class="px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                     >
                         <input
@@ -240,6 +241,7 @@
                     :key="order.id"
                 >
                     <td
+                         v-if="selectedService == userService || is_admin"
                         class="px-2 w-12 py-2 font-medium text-sm whitespace-no-wrap border-b border-gray-200"
                     >
                         <input
@@ -494,7 +496,9 @@ export default {
             search: "",
             order_id: "",
             services: {},
-            selectedService: window.Laravel.user.service_id,
+            selectedService: window.Laravel.user.is_admin == 1? 'all' : window.Laravel.user.service_id,
+            userService: window.Laravel.user.service_id,
+            is_admin: window.Laravel.user.is_admin == 1? true : false,
             s_id: "",
             checked: [],
             selectPage: false,
@@ -568,7 +572,7 @@ export default {
                 )
                 .then((response) => {
                     this.ordersData = response.data;
-                    console.log(response.data);
+                    console.log(this.is_admin);
                 });
         },
         deleteOrders() {

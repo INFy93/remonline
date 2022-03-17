@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Models\Option;
 class AdminController extends Controller
 {
     public function index()
@@ -30,5 +31,10 @@ class AdminController extends Controller
         ];
 
         return response()->json($result);
+    }
+
+    public function getAllSettings()
+    {
+        return response()->json(Option::all());
     }
 }
