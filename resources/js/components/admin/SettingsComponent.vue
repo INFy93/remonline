@@ -437,7 +437,6 @@ export default {
                 )
                 .then((response) => {
                     this.ordersData = response.data;
-                    console.log(this.is_admin);
                 });
         },
         openStory(id) {
