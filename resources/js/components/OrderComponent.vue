@@ -89,6 +89,7 @@
                                 <MenuItem v-if="!selectPage">
                                     <a
                                         href="#"
+                                        onclick="confirm('Are you sure you wanna delete this Record?') || event.stopImmediatePropagation()"
                                         status_id="1"
                                         @click.prevent="deleteOrders"
                                         class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
@@ -547,11 +548,11 @@ export default {
         deleteOrders() {
             axios.get("/orders/massDelete/" + this.checked).then((response) => {
                 if (response.status == 204) {
-                    if (confirm("Удалить выбранные заказы?")) {
+
                         this.toast.success("Выбранные заказы успешно удалены.");
                         this.checked = [];
                         this.getOrders();
-                    }
+
                 } else {
                     this.toast.error("Ошибка удаления заказов.");
                 }

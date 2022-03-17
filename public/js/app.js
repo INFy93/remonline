@@ -22888,13 +22888,11 @@ moment__WEBPACK_IMPORTED_MODULE_4___default().locale("ru");
 
       axios__WEBPACK_IMPORTED_MODULE_2___default().get("/orders/massDelete/" + this.checked).then(function (response) {
         if (response.status == 204) {
-          if (confirm("Удалить выбранные заказы?")) {
-            _this5.toast.success("Выбранные заказы успешно удалены.");
+          _this5.toast.success("Выбранные заказы успешно удалены.");
 
-            _this5.checked = [];
+          _this5.checked = [];
 
-            _this5.getOrders();
-          }
+          _this5.getOrders();
         } else {
           _this5.toast.error("Ошибка удаления заказов.");
         }
@@ -24369,6 +24367,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                   return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                     href: "#",
+                    onclick: "confirm('Are you sure you wanna delete this Record?') || event.stopImmediatePropagation()",
                     status_id: "1",
                     onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
                       return $options.deleteOrders && $options.deleteOrders.apply($options, arguments);
