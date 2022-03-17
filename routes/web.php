@@ -28,26 +28,39 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth'], function() {
     /* logout from app */
     Route::get('/logout', [LoginController::class, 'logout']);
+    /* main page */
     Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
+    /* get all orders */
     Route::get('/orders/all', [OrdersController::class, 'getAllOrders']);
+    /* get all services */
     Route::get('/services', [ServicesController::class, 'index']);
+    /* change status of one order */
     Route::post('/change_status', [OrdersController::class, 'changeStatus']);
+    /* add order to database */
     Route::post('/add_order', [WorkingWithOrdersController::class, 'addOrder']);
+    /* searching client login */
     Route::get('/search_client', [WorkingWithOrdersController::class, 'searchLogin']);
+    /* get count of open orders */
     Route::get('/open_orders', [OrdersController::class, 'getOpenOrders']);
+    /* edit order - get info */
     Route::get('/order/edit/{id}', [WorkingWithOrdersController::class, 'openOrder']);
+    /* get order story */
     Route::get('/order/story/{id}', [WorkingWithOrdersController::class, 'getStory']);
+    /* update order in database */
     Route::post('/update_order', [WorkingWithOrdersController::class, 'updateOrder']);
+    /* delete selected orders */
     Route::get('/orders/massDelete/{students}', [WorkingWithOrdersController::class, 'massDelete']);
+    /* select all orders on selected service (or all services, if selected) */
     Route::get('/orders/selectAll', [WorkingWithOrdersController::class, 'selectAll']);
-
+    /* export orders to excel */
     Route::get('/orders/export/{orders}', [OrdersController::class, 'export']);
 });
 
 Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
-    /* logout from app */
+    /* dashboard main page */
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     Route::get('/total', [AdminController::class, 'getTotalData']);
+    /* temporary */
     Route::get('/st', function () {
        Artisan::call('storage:link');
 
