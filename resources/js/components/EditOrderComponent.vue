@@ -206,7 +206,7 @@
                                     </div>
                                     <div class="mt-6 ml-3">
                                     История
-                                     <div v-if="!story"> <img src="/storage/img/load_table.svg" style="width: 15%"> </div>
+                                     <div v-if="!story.length"> <img src="/storage/img/load_table.svg" style="width: 15%"> </div>
                                     <div v-else v-for="(event, i) in story" :key="event.id" class="text-sm">
                                         <div v-if="i == '0'" class="mt-2 mb-2">
                                             <div class="block ml-auto mr-auto">
@@ -351,7 +351,6 @@ export default {
                 this.order.created_at = data1.data.created_at;
 
                 this.story = data2.data;
-                console.log(this.story)
             }));
         },
         editOrder(id) {

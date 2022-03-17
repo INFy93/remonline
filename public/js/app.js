@@ -22556,7 +22556,6 @@ moment__WEBPACK_IMPORTED_MODULE_3___default().locale("ru");
         _this.order.id = data1.data.id;
         _this.order.created_at = data1.data.created_at;
         _this.story = data2.data;
-        console.log(_this.story);
       }));
     },
     editOrder: function editOrder(id) {
@@ -22882,7 +22881,6 @@ moment__WEBPACK_IMPORTED_MODULE_4___default().locale("ru");
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       axios__WEBPACK_IMPORTED_MODULE_2___default().get("/orders/all?s=" + this.s_id + "&page=" + page + "&search=" + this.search + "&selectedService=" + this.selectedService).then(function (response) {
         _this4.ordersData = response.data;
-        console.log(_this4.is_admin);
       });
     },
     deleteOrders: function deleteOrders() {
@@ -23660,7 +23658,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Какую ОС ставить или комменты о клиенте :)"
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.order.marks]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, !_ctx.story ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_30, _hoisted_32)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.order.marks]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, !_ctx.story.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_30, _hoisted_32)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                 key: 1
               }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.story, function (event, i) {
                 return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
