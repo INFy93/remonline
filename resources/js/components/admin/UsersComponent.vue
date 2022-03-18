@@ -100,7 +100,6 @@ export default {
         getUsers() {
             axios.get("/dashboard/users/all").then(response => {
                this.usersData = response.data
-               console.log(this.usersData)
             })
         },
         dateFormat: function (value) {

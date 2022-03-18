@@ -23292,7 +23292,6 @@ moment__WEBPACK_IMPORTED_MODULE_2___default().locale("ru");
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().get("/dashboard/users/all").then(function (response) {
         _this.usersData = response.data;
-        console.log(_this.usersData);
       });
     },
     dateFormat: function dateFormat(value) {
