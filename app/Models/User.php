@@ -32,6 +32,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'last_login',
+        'last_login_ip'
     ];
 
     /**
