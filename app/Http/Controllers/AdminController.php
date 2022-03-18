@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\User;
 use App\Exports\MonthOrdersExport;
 use Illuminate\Http\Request;
 use App\Models\Option;
@@ -42,5 +43,10 @@ class AdminController extends Controller
     public function exportMonth()
     {
         return (new MonthOrdersExport)->download('orders_month.xlsx');
+    }
+
+    public function getUsers()
+    {
+        return response()->json(User::all());
     }
 }
