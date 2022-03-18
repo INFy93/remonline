@@ -50,12 +50,23 @@ class OrdersController extends Controller
 
     public function getOpenOrders()
     {
-        $open_orders = Order::where([
-                        ['status', '!=', 6],
-                        ['status', '!=', 7],
-                        ['service', '=', Auth::user()->service_id]
-                    ])
-                    ->count();
+        if (Auth::user()->is_admin)
+        {
+            $open_orders = Order::where([
+                ['status', '!=', 6],
+                ['status', '!=', 7]
+            ])
+            ->count();
+        } else
+        {
+            $open_orders = Order::where([
+                ['status', '!=', 6],
+                ['status', '!=', 7],
+                ['service', '=', Auth::user()->service_id]
+            ])
+            ->count();
+        }
+
 
         return response()->json($open_orders);
     }
