@@ -50,7 +50,7 @@
                 ><settings></settings></TabPanel>
                 <TabPanel
                 :class="[
-                    'bg-gray-200 rounded-xl p-3'
+                    'bg-gray-100 rounded-xl p-3'
                 ]"
                 ><users></users></TabPanel>
             </TabPanels>
