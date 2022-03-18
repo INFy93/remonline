@@ -52,7 +52,7 @@
                 :class="[
                     'bg-gray-200 rounded-xl p-3'
                 ]"
-                >Content 3</TabPanel>
+                ><users></users></TabPanel>
             </TabPanels>
         </TabGroup>
     </div>

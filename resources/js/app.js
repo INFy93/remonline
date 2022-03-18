@@ -43,6 +43,8 @@ import Admin from './components/admin/AdminComponent.vue'
 import Settings from './components/admin/SettingsComponent.vue'
 import Story from './components/admin/StoryComponent.vue'
 import Users from './components/admin/UsersComponent.vue'
+import AddUser from './components/admin/AddUserComponent.vue'
+import EditUser from './components/admin/EditUserComponent.vue'
 
 const app = createApp({});
 const admin = createApp({});
@@ -63,5 +65,7 @@ admin.component('admin-component', Admin);
 admin.component('settings', Settings);
 admin.component('story', Story);
 admin.component('users', Users);
+admin.component('add-user', AddUser);
+admin.component('edit-user', EditUser);
 admin.mount('#admin')
 require('./bootstrap');
