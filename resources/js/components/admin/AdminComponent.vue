@@ -2,20 +2,7 @@
     <div>
         <TabGroup>
             <TabList class="flex w-2/3 p-1 space-x-1 bg-blue-400 rounded-xl">
-                <Tab as="template">
-                    <button
-                        :class="[
-                            'w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg',
-                            'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
-                            selected
-                                ? 'bg-white shadow'
-                                : 'text-blue-100 hover:bg-white/[0.12] hover:text-white',
-                        ]"
-                    >
-                        Сведения
-                    </button>
-                </Tab>
-                <Tab as="template">
+                <Tab v-slot="{ selected }" as="template">
                     <button
                         :class="[
                             'w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg',
@@ -28,7 +15,7 @@
                         Заказы
                     </button>
                 </Tab>
-                <Tab as="template">
+                <Tab v-slot="{ selected }" as="template">
                     <button
                         :class="[
                             'w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg',
@@ -41,7 +28,7 @@
                         Пользователи
                     </button>
                 </Tab>
-                <Tab as="template">
+                <Tab v-slot="{ selected }" as="template">
                     <button
                         :class="[
                             'w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg',
@@ -56,11 +43,6 @@
                 </Tab>
             </TabList>
             <TabPanels class="mt-2">
-                <TabPanel
-                 :class="[
-                    'bg-gray-200 rounded-xl p-3'
-                ]"
-                ><total-data></total-data></TabPanel>
                 <TabPanel
                 :class="[
                     'bg-gray-100 rounded-xl p-3'

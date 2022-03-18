@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Exports\MonthOrdersExport;
 use Illuminate\Http\Request;
 use App\Models\Option;
 class AdminController extends Controller
@@ -36,5 +37,10 @@ class AdminController extends Controller
     public function getAllSettings()
     {
         return response()->json(Option::all());
+    }
+
+    public function exportMonth()
+    {
+        return (new MonthOrdersExport)->download('orders_month.xlsx');
     }
 }

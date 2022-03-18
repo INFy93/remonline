@@ -1,5 +1,27 @@
 <template>
     <div>
+        <div>
+        <h2 class="text-xl font-bold border-b border-gray-300">Общие сведения</h2>
+        <div class="mt-2">
+        <p class="flex">Всего заказов: <img v-if="!Object.keys(totalData).length" src="/storage/img/load_table.svg" style="width: 24px;"><span class="font-bold pl-1"> {{ totalData.all }}</span>, из них:</p>
+        <p class="flex"><img v-if="!Object.keys(totalData).length" src="/storage/img/load_table.svg" style="width: 24px;"><span class="font-bold">{{ totalData.open }}</span> <span class="pl-1">{{ declOfNum(totalData.open, ['открыт', 'открыто', 'открыто']) }}</span></p>
+        <p class="flex"><img v-if="!Object.keys(totalData).length" src="/storage/img/load_table.svg" style="width: 24px;"><span class="font-bold">{{ totalData.current }}</span><span class="pl-1"> в работе</span></p>
+        </div>
+
+    </div>
+    <h2 class="mt-3 text-xl font-bold border-b border-gray-300">Заказы</h2>
+    <a href="dashboard/export_month" class="update-button">
+
+            <button
+
+                class="flex items-start space-x-1 mt-3 bg-green-500 hover:bg-green-700 dark:bg-blue-900 dark:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                <span>Экспорт всех заказов за месяц</span>
+            </button>
+        </a>
         <div class="mb-5 mt-3 flex flex-row">
             <div class="flex justify-end items-center ml-auto space-x-5">
                 <label
@@ -364,6 +386,7 @@ export default {
     data: function () {
         return {
             ordersData: {},
+            totalData: {},
             search: "",
             order_id: "",
             services: {},
@@ -411,9 +434,15 @@ export default {
             this.services = response.data;
         });
         this.getOrders();
+        this.getData();
     },
     methods: {
-       selectAllOrders() {
+        getData() {
+            axios.get("/dashboard/total").then((response) => {
+                this.totalData = response.data
+            })
+        },
+        selectAllOrders() {
             axios
                 .get("/orders/selectAll?service=" + this.selectedService)
                 .then((response) => {
