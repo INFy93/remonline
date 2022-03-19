@@ -37,6 +37,11 @@
                     >
                         Последний вход
                     </th>
+                    <th
+                        class="px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                        IP
+                    </th>
                 </tr>
             </thead>
             <tbody class="bg-white">
@@ -73,7 +78,12 @@
                     <td
                         class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
                     >
-                        Потом добавлю
+                        {{ user.last_login == null ? 'Не заходил' : dateFormat(user.last_login)  }}
+                    </td>
+                    <td
+                        class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
+                    >
+                        {{ user.last_login_ip == null ? '-' : user.last_login_ip  }}
                     </td>
                  </tr>
             </tbody>
@@ -100,6 +110,7 @@ export default {
         getUsers() {
             axios.get("/dashboard/users/all").then(response => {
                this.usersData = response.data
+               console.log(this.usersData)
             })
         },
         dateFormat: function (value) {
