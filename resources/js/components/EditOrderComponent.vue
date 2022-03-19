@@ -347,6 +347,7 @@ export default {
                     data1.data.product_complection;
                 this.order.malfunction = data1.data.malfunction;
                 this.order.appearance = data1.data.appearance;
+                this.order.marks = data1.data.marks;
                 this.order.id = data1.data.id;
                 this.order.created_at = data1.data.created_at;
 

@@ -22553,6 +22553,7 @@ moment__WEBPACK_IMPORTED_MODULE_3___default().locale("ru");
         _this.order.product_complection = data1.data.product_complection;
         _this.order.malfunction = data1.data.malfunction;
         _this.order.appearance = data1.data.appearance;
+        _this.order.marks = data1.data.marks;
         _this.order.id = data1.data.id;
         _this.order.created_at = data1.data.created_at;
         _this.story = data2.data;
