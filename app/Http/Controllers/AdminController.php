@@ -48,7 +48,7 @@ class AdminController extends Controller
 
     public function getUsers()
     {
-        return response()->json(User::with(['roles'])->get());
+        return response()->json(User::with(['roles', 'services'])->get());
     }
 
     public function addUser(Request $req)
@@ -58,6 +58,7 @@ class AdminController extends Controller
             'login' => $req->user['userLogin'],
             'email' => $req->user['userEmail'],
             'password' => Hash::make($req->user['userPass']),
+            'service_id' => $req->service,
             'is_admin' => $req->user['userIsAdmin'] ? 1 : 0,
             'created_at' =>  date("Y-m-d H:i:s"),
             'updated_at' =>  date("Y-m-d H:i:s"),

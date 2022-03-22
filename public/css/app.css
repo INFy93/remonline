@@ -1055,6 +1055,9 @@ input:checked + .toggle-bg {
 .w-4 {
   width: 1rem;
 }
+.w-44 {
+  width: 11rem;
+}
 .max-w-6xl {
   max-width: 72rem;
 }

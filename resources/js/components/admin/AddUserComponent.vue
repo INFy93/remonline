@@ -143,6 +143,26 @@
                                             required
                                         />
                                     </div>
+                                    <div class="mb-4">
+                                        <label
+                                            for="services"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                            >Сервис</label
+                                        >
+                                        <select
+                                            id="services"
+                                            v-model="selectedService"
+                                            class="h-10 w-44 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        >
+                                            <option
+                                                v-for="service in services"
+                                                :key="service.id"
+                                                :value="service.id"
+                                            >
+                                                {{ service.service_name }}
+                                            </option>
+                                        </select>
+                                    </div>
                                     <div class="mb-4 border-t">
                                         <div class="mt-3">
                                             <input type="checkbox" v-model="userData.userIsAdmin" class="rounded focus:outline-none focus:ring dark:ring-offset-gray-600 dark:focus:ring-gray-500 border-gray-300 dark:border-gray-600 dark:bg-gray-500 dark:text-gray-400">
@@ -204,7 +224,9 @@ export default {
                 userPass: '',
                 userConfirmPass: '',
                 userIsAdmin: false
-            }
+            },
+            services: {},
+            selectedService: ''
         };
     },
     components: {
@@ -232,6 +254,11 @@ export default {
             toast,
         };
     },
+    created() {
+         axios.get("/services").then((response) => {
+            this.services = response.data;
+        });
+    },
     methods: {
         addUser() {
             if (this.userData.userPass != this.userData.userConfirmPass)
@@ -241,6 +268,7 @@ export default {
             else
             {
                 axios.post("/dashboard/user/add", {
+                    service: this.selectedService,
                     user: this.userData
                 }).then(response => {
                     this.closeModal();

@@ -37,6 +37,11 @@
                     <th
                         class="px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                     >
+                        Сервис
+                    </th>
+                    <th
+                        class="px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                    >
                         Добавлен
                     </th>
                     <th
@@ -89,6 +94,11 @@
                         class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
                     >
                         {{ user.email }}
+                    </td>
+                    <td
+                        class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
+                    >
+                        {{ user.services.service_name }}
                     </td>
                     <td
                         class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"

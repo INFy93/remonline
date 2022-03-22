@@ -24863,8 +24863,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       new_order: {
         client_login: {
-          required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_5__.required,
-          $message: "Логин должен быть!"
+          required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_5__.required
         },
         client_phone: {
           required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_5__.required
@@ -25194,7 +25193,9 @@ __webpack_require__.r(__webpack_exports__);
         userPass: '',
         userConfirmPass: '',
         userIsAdmin: false
-      }
+      },
+      services: {},
+      selectedService: ''
     };
   },
   components: {
@@ -25222,28 +25223,36 @@ __webpack_require__.r(__webpack_exports__);
       toast: toast
     };
   },
+  created: function created() {
+    var _this = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get("/services").then(function (response) {
+      _this.services = response.data;
+    });
+  },
   methods: {
     addUser: function addUser() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.userData.userPass != this.userData.userConfirmPass) {
         this.toast.error('Пароли не совпадают!');
       } else {
         axios__WEBPACK_IMPORTED_MODULE_0___default().post("/dashboard/user/add", {
+          service: this.selectedService,
           user: this.userData
         }).then(function (response) {
-          _this.closeModal();
+          _this2.closeModal();
 
-          _this.userData.userName = '';
-          _this.userData.userLogin = '';
-          _this.userData.userEmail = '';
-          _this.userData.userPass = '';
-          _this.userData.userConfirmPass = '';
-          _this.userData.userIsAdmin = false;
+          _this2.userData.userName = '';
+          _this2.userData.userLogin = '';
+          _this2.userData.userEmail = '';
+          _this2.userData.userPass = '';
+          _this2.userData.userConfirmPass = '';
+          _this2.userData.userIsAdmin = false;
 
-          _this.toast.success("Пользователь " + _this.userData.userName + " успешно добавлен!");
+          _this2.toast.success("Пользователь " + _this2.userData.userName + " успешно добавлен!");
 
-          _this.$emit("add-user");
+          _this2.$emit("add-user");
         });
       }
     }
@@ -27833,19 +27842,31 @@ var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_22 = {
+  "class": "mb-4"
+};
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "services",
+  "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+}, "Сервис", -1
+/* HOISTED */
+);
+
+var _hoisted_24 = ["value"];
+var _hoisted_25 = {
   "class": "mb-4 border-t"
 };
-var _hoisted_23 = {
+var _hoisted_26 = {
   "class": "mt-3"
 };
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "px-2"
 }, "Администратор", -1
 /* HOISTED */
 );
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mb-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "checkbox",
@@ -27856,7 +27877,7 @@ var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_26 = {
+var _hoisted_29 = {
   "class": "mt-4 flex space-x-4 float-right"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -27976,24 +27997,41 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 required: ""
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.userData.userConfirmPass]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-                type: "checkbox",
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.userData.userConfirmPass]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+                id: "services",
                 "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+                  return _ctx.selectedService = $event;
+                }),
+                "class": "h-10 w-44 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.services, function (service) {
+                return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+                  key: service.id,
+                  value: service.id
+                }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.service_name), 9
+                /* TEXT, PROPS */
+                , _hoisted_24);
+              }), 128
+              /* KEYED_FRAGMENT */
+              ))], 512
+              /* NEED_PATCH */
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, _ctx.selectedService]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+                type: "checkbox",
+                "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
                   return _ctx.userData.userIsAdmin = $event;
                 }),
                 "class": "rounded focus:outline-none focus:ring dark:ring-offset-gray-600 dark:focus:ring-gray-500 border-gray-300 dark:border-gray-600 dark:bg-gray-500 dark:text-gray-400"
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, _ctx.userData.userIsAdmin]]), _hoisted_24])]), _hoisted_25]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, _ctx.userData.userIsAdmin]]), _hoisted_27])]), _hoisted_28]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-items-end px-4 py-2 text-sm font-medium text-blue-900 bg-red-300 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[7] || (_cache[7] = function () {
+                onClick: _cache[8] || (_cache[8] = function () {
                   return $setup.closeModal && $setup.closeModal.apply($setup, arguments);
                 })
               }, " Закрыть "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[8] || (_cache[8] = function () {
+                onClick: _cache[9] || (_cache[9] = function () {
                   return $options.addUser && $options.addUser.apply($options, arguments);
                 })
               }, " Добавить ")])])];
@@ -29243,6 +29281,8 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
 }, " EMAIL "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+}, " Сервис "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+  "class": "px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
 }, " Добавлен "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
 }, " Последний вход "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
@@ -29284,9 +29324,12 @@ var _hoisted_17 = {
 var _hoisted_18 = {
   "class": "px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
 };
-var _hoisted_19 = ["onClick"];
+var _hoisted_19 = {
+  "class": "px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
+};
+var _hoisted_20 = ["onClick"];
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-5 w-5",
   fill: "none",
@@ -29301,11 +29344,11 @@ var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Удалить", -1
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Удалить", -1
 /* HOISTED */
 );
 
-var _hoisted_22 = [_hoisted_20, _hoisted_21];
+var _hoisted_23 = [_hoisted_21, _hoisted_22];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_add_user = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("add-user");
 
@@ -29341,22 +29384,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.email), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.dateFormat(user.created_at)), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.services.service_name), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.last_login == null ? 'Не заходил' : $options.dateFormat(user.last_login)), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.dateFormat(user.created_at)), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.last_login_ip == null ? '-' : user.last_login_ip), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.last_login == null ? 'Не заходил' : $options.dateFormat(user.last_login)), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.last_login_ip == null ? '-' : user.last_login_ip), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       href: "#",
       "class": "flex space-x-1 text-blue-600 hover:underline",
       onclick: "confirm('Удалить пользователя?') || event.stopImmediatePropagation()",
       onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
         return $options.deleteUser(user.id);
       }, ["prevent"])
-    }, _hoisted_22, 8
+    }, _hoisted_23, 8
     /* PROPS */
-    , _hoisted_19)])]);
+    , _hoisted_20)])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])]))]);
