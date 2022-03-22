@@ -57,7 +57,7 @@ class AdminController extends Controller
             'name' => $req->user['userName'],
             'login' => $req->user['userLogin'],
             'email' => $req->user['userEmail'],
-            'password' =>  Hash::make($req->user['userPass']),
+            'password' => Hash::make($req->user['userPass']),
             'is_admin' => $req->user['userIsAdmin'] ? 1 : 0,
             'created_at' =>  date("Y-m-d H:i:s"),
             'updated_at' =>  date("Y-m-d H:i:s"),
@@ -73,5 +73,31 @@ class AdminController extends Controller
         User::where('id', $id)->delete();
 
         return response()->noContent();
+    }
+
+    public function editUser($id)
+    {
+        $user = User::find($id);
+
+        return response()->json($user);
+    }
+
+    public function updateUser(Request $req)
+    {
+        $user = User::where('id', '=', $req->user_id)->first();
+
+        $user->name = $req->user['userName'];
+        $user->login = $req->user['userLogin'];
+        $user->email = $req->user['userEmail'];
+        if ($req->user['userPass'] != '')
+        {
+            $user->password =  Hash::make($req->user['userPass']);
+        }
+        $user->is_admin = $req->user['userIsAdmin'] ? 1 : 0;
+        $user->updated_at = date("Y-m-d H:i:s");
+
+        $user->save();
+
+        return response()->json($req);
     }
 }

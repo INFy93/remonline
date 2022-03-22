@@ -252,7 +252,6 @@ export default {
                     this.userData.userIsAdmin = false
                     this.toast.success("Пользователь " + this.userData.userName + " успешно добавлен!")
                     this.$emit("add-user");
-                    console.log(response)
                 })
             }
         }

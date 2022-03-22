@@ -4,6 +4,10 @@
         <div class="mt-3">
             <add-user @add-user="getUsers"></add-user>
         </div>
+        <edit-user
+            @edit-event="getUsers"
+            ref="openEditPopup"
+        ></edit-user>
         <div v-if="!usersData.length">
             <img src="/storage/img/load_table.svg" style="margin: 0 auto" />
         </div>
@@ -61,7 +65,15 @@
                     <td
                         class="px-2 w-40 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
                     >
+                    <a
+                    href="#"
+                    v-if="user_id != user.id"
+                    class="text-blue-600 hover:underline"
+                    @click.prevent="openUser(user.id)"
+                    >
                         {{ user.name }}
+                    </a>
+                    <span v-else>{{ user.name }}</span>
                     </td>
                     <td
                         class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
@@ -128,6 +140,7 @@ export default {
     data: function () {
         return {
             usersData: {},
+            user_id: window.Laravel.user.id,
         };
     },
     watch: {
@@ -149,6 +162,10 @@ export default {
                 this.toast.warning("Пользователь удален успешно!")
                 this.getUsers();
             })
+        },
+        openUser(id) {
+            this.$refs.openEditPopup.editUser(id);
+            //console.log(this.order_id)
         },
         dateFormat: function (value) {
             if (value) {

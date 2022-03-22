@@ -251,7 +251,6 @@
             <tbody class="bg-white">
                 <tr
                     class="number hover:bg-gray-200 transition-all duration-400"
-                     @dblclick="openStory(order.id)"
                     v-for="order in ordersData.data"
                     :key="order.id"
                 >
@@ -268,7 +267,14 @@
                     <td
                         class="px-2 w-20 py-2 font-medium text-sm whitespace-no-wrap border-b border-gray-200"
                     >
-                        I-{{ order.id }}
+                    <a
+                    href=""
+                    class="text-blue-600 hover:underline"
+                    @click.prevent="openStory(order.id)"
+                    >
+                         I-{{ order.id }}
+                    </a>
+
                     </td>
 
                     <td
