@@ -244,6 +244,12 @@ export default {
                     user: this.userData
                 }).then(response => {
                     this.closeModal();
+                    this.userData.userName = ''
+                    this.userData.userLogin = ''
+                    this.userData.userEmail = ''
+                    this.userData.userPass = ''
+                    this.userData.userConfirmPass = ''
+                    this.userData.userIsAdmin = false
                     this.toast.success("Пользователь " + this.userData.userName + " успешно добавлен!")
                     this.$emit("add-user");
                     console.log(response)

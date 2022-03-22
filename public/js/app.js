@@ -23045,6 +23045,13 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           _this.closeModal();
 
+          _this.userData.userName = '';
+          _this.userData.userLogin = '';
+          _this.userData.userEmail = '';
+          _this.userData.userPass = '';
+          _this.userData.userConfirmPass = '';
+          _this.userData.userIsAdmin = false;
+
           _this.toast.success("Пользователь " + _this.userData.userName + " успешно добавлен!");
 
           _this.$emit("add-user");
