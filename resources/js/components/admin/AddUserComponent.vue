@@ -158,6 +158,7 @@
                                                 v-for="service in services"
                                                 :key="service.id"
                                                 :value="service.id"
+                                                :selected="service.id == selectedService"
                                             >
                                                 {{ service.service_name }}
                                             </option>
@@ -226,7 +227,7 @@ export default {
                 userIsAdmin: false
             },
             services: {},
-            selectedService: ''
+            selectedService: 1
         };
     },
     components: {

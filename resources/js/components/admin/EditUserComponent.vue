@@ -121,6 +121,27 @@
                                             required
                                         />
                                     </div>
+                                    <div class="mb-4">
+                                        <label
+                                            for="services"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                            >Сервис</label
+                                        >
+                                        <select
+                                            id="services"
+                                            v-model="selectedService"
+                                            class="h-10 w-44 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        >
+                                            <option
+                                                v-for="service in services"
+                                                :key="service.id"
+                                                :value="service.id"
+                                                :selected="service.id == selectedService"
+                                            >
+                                                {{ service.service_name }}
+                                            </option>
+                                        </select>
+                                    </div>
                                     <div class="mb-4 border-t">
                                         <div class="mt-3">
                                             <input type="checkbox" v-model="userData.userIsAdmin" class="rounded focus:outline-none focus:ring dark:ring-offset-gray-600 dark:focus:ring-gray-500 border-gray-300 dark:border-gray-600 dark:bg-gray-500 dark:text-gray-400">
@@ -182,8 +203,10 @@ export default {
                 userEmail: '',
                 userPass: '',
                 userConfirmPass: '',
+                userService: '',
                 userIsAdmin: false
-            }
+            },
+            selectedService: ''
         };
     },
     components: {
@@ -211,6 +234,11 @@ export default {
             toast,
         };
     },
+    created() {
+         axios.get("/services").then((response) => {
+            this.services = response.data;
+        });
+    },
     methods: {
         editUser(id) {
                 axios.get("/dashboard/user/edit/" + id).then(response => {
@@ -220,6 +248,7 @@ export default {
                     this.userData.userLogin = response.data.login
                     this.userData.userEmail = response.data.email
                     this.userData.userIsAdmin = response.data.is_admin == 1 ? true : false
+                    this.selectedService = response.data.service_id
                 })
         },
         updateUser(id) {
@@ -231,6 +260,7 @@ export default {
             {
                 axios.post("/dashboard/user/update", {
                     user_id: id,
+                    service: this.selectedService,
                     user: this.userData
                 }).then(response => {
                         this.closeModal();
@@ -242,7 +272,6 @@ export default {
                         this.userData.userIsAdmin = false
                         this.toast.success("Пользователь успешно обновлен!")
                         this.$emit("edit-event");
-                        console.log(response)
                 })
             }
         }

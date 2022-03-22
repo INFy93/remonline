@@ -90,6 +90,7 @@ class AdminController extends Controller
         $user->name = $req->user['userName'];
         $user->login = $req->user['userLogin'];
         $user->email = $req->user['userEmail'];
+        $user->service_id = $req->service;
         if ($req->user['userPass'] != '')
         {
             $user->password =  Hash::make($req->user['userPass']);
