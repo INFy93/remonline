@@ -28,7 +28,7 @@ class OrdersController extends Controller
         })
         ->search(trim($search_term))
         ->orderBy('id', 'desc')
-        ->paginate(5);
+        ->paginate(30);
        // dd($orders);
         return response()->json($orders);
     }
