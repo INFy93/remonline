@@ -79,13 +79,15 @@
                                         >
                                         <input
                                             type="text"
-                                            v-model="new_order.client_login"
+                                            v-model="val.new_order.client_login.$model"
                                             @keyup="searchLogins"
                                             id="cleint_login"
                                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            :class="{'border-red-400' : val.new_order.client_login.$error}"
                                             placeholder="Логин или имя клиента"
                                             required
                                         />
+                                        <div v-if="val.new_order.client_login.$error" class="text-sm text-red-500">Необходимо ввести логин или ФИО клиента.</div>
 
                                 <Menu>
 
@@ -122,13 +124,15 @@
                                         <input
                                             v-maska="'+7 (###) ###-##-##'"
                                             type="tel"
-                                            v-model="new_order.client_phone"
+                                            v-model="val.new_order.client_phone.$model"
                                             id="clent_phone"
                                             name="phone"
                                             required
                                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            :class="{'border-red-400' : val.new_order.client_phone.$error}"
                                             placeholder="Телефон"
                                         />
+                                        <div v-if="val.new_order.client_phone.$error" class="text-sm text-red-500">Необходимо ввести телефон.</div>
                                     </div>
                                     <div class="mb-6">
                                         <label
@@ -138,12 +142,13 @@
                                         >
                                         <input
                                             type="text"
-                                            v-model="new_order.product"
+                                            v-model="val.new_order.product.$model"
                                             id="product"
                                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            required
+                                            :class="{'border-red-400' : val.new_order.product.$error}"
                                             placeholder="ПК, нотубук, роутер..."
                                         />
+                                        <div v-if="val.new_order.product.$error" class="text-sm text-red-500">Необходимо ввести тип устройства.</div>
                                     </div>
                                     <div class="mb-6">
                                         <label
@@ -153,12 +158,13 @@
                                         >
                                         <input
                                             type="text"
-                                            v-model="new_order.model"
+                                            v-model="val.new_order.model.$model"
                                             id="model"
                                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            required
+                                            :class="{'border-red-400' : val.new_order.model.$error}"
                                             placeholder="Asus, Acer, черный/белый/.. сис"
                                         />
+                                        <div v-if="val.new_order.model.$error" class="text-sm text-red-500">Необходимо ввести модель.</div>
                                     </div>
                                     <div class="mb-6">
                                         <label
@@ -181,12 +187,14 @@
                                             >Неисправность*</label
                                         >
                                         <textarea
-                                            v-model="new_order.malfunction"
+                                            v-model="val.new_order.malfunction.$model"
                                             id="malfunction"
                                             rows="4"
                                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            :class="{'border-red-400' : val.new_order.malfunction.$error}"
                                             placeholder="Перенастройка ОС и так далее..."
                                         ></textarea>
+                                        <div v-if="val.new_order.malfunction.$error" class="text-sm text-red-500">Необходимо ввести что с устройством случилось.</div>
                                     </div>
                                     <div class="mb-6">
                                         <label
@@ -262,6 +270,8 @@ import axios from "axios";
 import { ref } from "vue";
 import { useToast } from "vue-toastification";
 import { Menu, MenuItems, MenuItem } from "@headlessui/vue";
+import { required, email } from '@vuelidate/validators'
+import useVuelidate from '@vuelidate/core'
 import {
     TransitionRoot,
     TransitionChild,
@@ -270,25 +280,6 @@ import {
     DialogTitle,
 } from "@headlessui/vue";
 export default {
-    data: function () {
-        return {
-            new_order: {
-                client_login: "",
-                client_phone: "",
-                product: "",
-                model: "",
-                model_full_name: "",
-                product_complection: "",
-                malfunction: "",
-                appearance: "Царапины, потертости",
-                marks: "",
-                manager_id: window.Laravel.user.id
-            },
-            phone: "",
-            show: false,
-            clientData: {}
-        };
-    },
     components: {
         TransitionRoot,
         TransitionChild,
@@ -312,10 +303,43 @@ export default {
                 isOpen.value = true;
             },
             toast,
+            val: useVuelidate()
+        };
+    },
+    validations () {
+        return {
+            new_order: {
+                client_login: {required},
+                client_phone: {required},
+                product: {required},
+                model: {required},
+                malfunction: {required}
+            }
+        }
+    },
+    data: function () {
+        return {
+            new_order: {
+                client_login: "",
+                client_phone: "",
+                product: "",
+                model: "",
+                model_full_name: "",
+                product_complection: "",
+                malfunction: "",
+                appearance: "Царапины, потертости",
+                marks: "",
+                manager_id: window.Laravel.user.id
+            },
+            phone: "",
+            show: false,
+            clientData: {}
         };
     },
     methods: {
         addOrder() {
+            this.val.$touch();
+             if (this.val.$pending || this.val.$error) return this.toast.error("Не все поля заполнены!");
             axios
                 .post("/add_order", {
                     order: this.new_order,

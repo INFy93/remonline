@@ -8,7 +8,6 @@
 import { createApp } from 'vue'
 
 import Maska from 'maska'
-
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 const options = {
@@ -50,7 +49,6 @@ const app = createApp({});
 const admin = createApp({});
 
 app.use(VueHtmlToPaper, p_options);
-
 app.use(Maska);
 app.use(Toast, options);
 
