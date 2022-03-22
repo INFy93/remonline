@@ -63,6 +63,8 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
     Route::get('/options', [AdminController::class, 'getAllSettings']);
     Route::get('/export_month', [AdminController::class, 'exportMonth']);
     Route::get('/users/all', [AdminController::class, 'getUsers']);
+    Route::post('/user/add', [AdminController::class, 'addUser']);
+    Route::get('/user/delete/{id}', [AdminController::class, 'deleteUser']);
     /* temporary */
     Route::get('/st', function () {
        Artisan::call('storage:link');

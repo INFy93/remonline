@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Exports\MonthOrdersExport;
 use Illuminate\Http\Request;
 use App\Models\Option;
+use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     public function index()
@@ -48,5 +49,29 @@ class AdminController extends Controller
     public function getUsers()
     {
         return response()->json(User::with(['roles'])->get());
+    }
+
+    public function addUser(Request $req)
+    {
+        $user = [
+            'name' => $req->user['userName'],
+            'login' => $req->user['userLogin'],
+            'email' => $req->user['userEmail'],
+            'password' =>  Hash::make($req->user['userPass']),
+            'is_admin' => $req->user['userIsAdmin'] ? 1 : 0,
+            'created_at' =>  date("Y-m-d H:i:s"),
+            'updated_at' =>  date("Y-m-d H:i:s"),
+        ];
+
+        User::insert($user);
+
+        return response()->json("Юзер успешно добавлен!");
+    }
+
+    public function deleteUser($id)
+    {
+        User::where('id', $id)->delete();
+
+        return response()->noContent();
     }
 }

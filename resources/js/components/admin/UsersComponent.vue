@@ -1,6 +1,9 @@
 <template>
     <div>
         <h2 class="text-xl font-bold border-b border-gray-300">Пользователи</h2>
+        <div class="mt-3">
+            <add-user @add-user="getUsers"></add-user>
+        </div>
         <div v-if="!usersData.length">
             <img src="/storage/img/load_table.svg" style="margin: 0 auto" />
         </div>
@@ -41,6 +44,11 @@
                         class="px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                     >
                         IP
+                    </th>
+                    <th
+                        class="px-2 py-4 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                        Действия
                     </th>
                 </tr>
             </thead>
@@ -85,6 +93,20 @@
                     >
                         {{ user.last_login_ip == null ? '-' : user.last_login_ip  }}
                     </td>
+                    <td
+                        class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
+                    >
+                        <a href="#"
+                        class="flex space-x-1 text-blue-600 hover:underline"
+                        onclick="confirm('Удалить пользователя?') || event.stopImmediatePropagation()"
+                        @click.prevent="deleteUser(user.id)"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                            <span>Удалить</span>
+                        </a>
+                    </td>
                  </tr>
             </tbody>
          </table>
@@ -94,12 +116,22 @@
 import _ from "lodash";
 import axios from "axios";
 import moment, { duration } from "moment";
+import { useToast } from "vue-toastification";
 moment.locale("ru");
 export default {
+    setup() {
+        const toast = useToast();
+        return {
+            toast,
+        }
+    },
     data: function () {
         return {
             usersData: {},
         };
+    },
+    watch: {
+
     },
     components: {
     },
@@ -110,7 +142,12 @@ export default {
         getUsers() {
             axios.get("/dashboard/users/all").then(response => {
                this.usersData = response.data
-               console.log(this.usersData)
+            })
+        },
+        deleteUser(id) {
+            axios.get("dashboard/user/delete/" + id).then(response => {
+                this.toast.warning("Пользователь удален успешно!")
+                this.getUsers();
             })
         },
         dateFormat: function (value) {
