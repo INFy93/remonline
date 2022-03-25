@@ -51,7 +51,9 @@
                                         <print-component :userdata="order"></print-component>
                                     </div>
                                     <div class="mb-2 space-x-4 float-right">
+                                         <div v-if="!order.client_login"> <img src="/storage/img/load_table.svg" style="width: 20%;" class="float-right"> </div>
                                     <button
+                                        v-else
                                         type="button"
                                         class="inline-flex justify-items-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                                         @click="print"
@@ -332,6 +334,15 @@ export default {
          },
         openToEdit(id) {
             this.story = {}
+            this.order.client_login = "";
+                    this.order.client_phone = "";
+                    this.order.product = "";
+                    this.order.model = "";
+                    this.order.model_full_name = "";
+                    this.order.product_complection = "";
+                    this.order.malfunction = "";
+                    this.order.appearance = "Царапины, потертости";
+                    this.order.marks = "";
             this.openModal();
             axios.all([
                  axios.get("/order/edit/" + id),
