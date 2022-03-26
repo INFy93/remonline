@@ -186,6 +186,11 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                             >Неисправность*</label
                                         >
+                                        <div class="flex space-x-2">
+                                                    <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Перенастройка ОС</a>
+                                                    <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Черный экран</a>
+                                                    <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Не включается</a>
+                                        </div>
                                         <textarea
                                             v-model="val.new_order.malfunction.$model"
                                             id="malfunction"
@@ -215,6 +220,11 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                             >Комплектация</label
                                         >
+                                        <div class="flex space-x-2">
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Ноут + зарядка</a>
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Полная</a>
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Со шнуром</a>
+                                        </div>
                                         <textarea
                                             v-model="
                                                 new_order.product_complection
@@ -377,6 +387,12 @@ export default {
             this.new_order.client_login = login
             this.new_order.client_phone = phone
             this.show = false
+        },
+        addMalfunction(event) {
+            this.new_order.malfunction = event.target.innerHTML
+        },
+        addComplection(event) {
+            this.new_order.product_complection = event.target.innerHTML
         },
     },
 };
