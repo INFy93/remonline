@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function() {
     /* update order in database */
     Route::post('/update_order', [WorkingWithOrdersController::class, 'updateOrder']);
     /* delete selected orders */
-    Route::get('/orders/massDelete/{students}', [WorkingWithOrdersController::class, 'massDelete']);
+    Route::get('/orders/massDelete/{orders}', [WorkingWithOrdersController::class, 'massDelete']);
     /* select all orders on selected service (or all services, if selected) */
     Route::get('/orders/selectAll', [WorkingWithOrdersController::class, 'selectAll']);
     /* export orders to excel */
