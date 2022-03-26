@@ -39,7 +39,7 @@
             </div>
         </div>
         <h2 class="mt-3 text-xl font-bold border-b border-gray-300">Заказы</h2>
-        <a href="dashboard/export_month" class="update-button flex items-start w-80 space-x-1 mt-3 bg-green-500 hover:bg-green-700 dark:bg-blue-900 dark:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
+        <a href="dashboard/export_month" class="flex items-start w-80 space-x-1 mt-3 bg-green-500 hover:bg-green-700 dark:bg-blue-900 dark:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-6 w-6"
