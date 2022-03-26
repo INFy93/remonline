@@ -26684,14 +26684,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Полная"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Ноут + зарядка + сумка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[15] || (_cache[15] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноут без зарядки"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[16] || (_cache[16] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Полная"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[17] || (_cache[17] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
               }, "Со шнуром")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
+                "onUpdate:modelValue": _cache[18] || (_cache[18] = function ($event) {
                   return _ctx.new_order.product_complection = $event;
                 }),
                 id: "product_complection",
@@ -26701,7 +26713,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 512
               /* NEED_PATCH */
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.product_complection]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [_hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[17] || (_cache[17] = function ($event) {
+                "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
                   return _ctx.new_order.marks = $event;
                 }),
                 id: "marks",
@@ -26713,13 +26725,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.marks]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-items-end px-4 py-2 text-sm font-medium text-blue-900 bg-red-300 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[18] || (_cache[18] = function () {
+                onClick: _cache[20] || (_cache[20] = function () {
                   return $setup.closeModal && $setup.closeModal.apply($setup, arguments);
                 })
               }, " Закрыть "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[19] || (_cache[19] = function () {
+                onClick: _cache[21] || (_cache[21] = function () {
                   return $options.addOrder && $options.addOrder.apply($options, arguments);
                 })
               }, " Добавить ")])])];

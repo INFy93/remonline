@@ -222,6 +222,8 @@
                                         >
                                         <div class="flex space-x-2">
                                                     <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Ноут + зарядка</a>
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Ноут + зарядка + сумка</a>
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Ноут без зарядки</a>
                                                     <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Полная</a>
                                                     <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Со шнуром</a>
                                         </div>
