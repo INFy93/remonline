@@ -25543,7 +25543,6 @@ moment__WEBPACK_IMPORTED_MODULE_5___default().locale("ru");
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       axios__WEBPACK_IMPORTED_MODULE_4___default().get("/orders/all?s=" + this.s_id + "&page=" + page + "&search=" + this.search + "&selectedService=" + this.selectedService).then(function (response) {
         _this5.ordersData = response.data;
-        console.log(_this5.ordersData);
       });
     },
     openStory: function openStory(id) {
