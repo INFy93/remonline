@@ -31,7 +31,8 @@ class Order extends Model
         $query->where(function($query) use ($term){
             $query->where('client_login', 'like', $term)
                 ->orWhere('model', 'like', $term)
-                ->orWhere('model_full_name', 'like', $term);
+                ->orWhere('model_full_name', 'like', $term)
+                ->orWhere('client_phone', 'like', $term);
         });
     }
 }

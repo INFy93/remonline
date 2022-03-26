@@ -102,4 +102,15 @@ class AdminController extends Controller
 
         return response()->json($req);
     }
+
+    public function switchService($order_id, $service_id)
+    {
+        $order = Order::find($order_id);
+
+        $order->service = $service_id;
+
+        $order->save();
+
+        return response()->noContent();
+    }
 }

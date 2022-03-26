@@ -67,6 +67,7 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
     Route::get('/user/delete/{id}', [AdminController::class, 'deleteUser']);
     Route::get('/user/edit/{id}', [AdminController::class, 'editUser']);
     Route::post('/user/update', [AdminController::class, 'updateUser']);
+    Route::get('/service/switch/{id}/{order_id}', [AdminController::class, 'switchService']);
     /* temporary */
     Route::get('/st', function () {
        Artisan::call('storage:link');

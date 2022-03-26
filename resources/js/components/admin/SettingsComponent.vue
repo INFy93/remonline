@@ -1,24 +1,62 @@
 <template>
     <div>
         <div>
-        <h2 class="text-xl font-bold border-b border-gray-300">Общие сведения</h2>
-        <div class="mt-2">
-        <p class="flex">Всего заказов: <img v-if="!Object.keys(totalData).length" src="/storage/img/load_table.svg" style="width: 24px;"><span class="font-bold pl-1"> {{ totalData.all }}</span>, из них:</p>
-        <p class="flex"><img v-if="!Object.keys(totalData).length" src="/storage/img/load_table.svg" style="width: 24px;"><span class="font-bold">{{ totalData.open }}</span> <span class="pl-1">{{ declOfNum(totalData.open, ['открыт', 'открыто', 'открыто']) }}</span></p>
-        <p class="flex"><img v-if="!Object.keys(totalData).length" src="/storage/img/load_table.svg" style="width: 24px;"><span class="font-bold">{{ totalData.current }}</span><span class="pl-1"> в работе</span></p>
+            <h2 class="text-xl font-bold border-b border-gray-300">
+                Общие сведения
+            </h2>
+            <div class="mt-2">
+                <p class="flex">
+                    Всего заказов:
+                    <img
+                        v-if="!Object.keys(totalData).length"
+                        src="/storage/img/load_table.svg"
+                        style="width: 24px"
+                    /><span class="font-bold pl-1"> {{ totalData.all }}</span
+                    >, из них:
+                </p>
+                <p class="flex">
+                    <img
+                        v-if="!Object.keys(totalData).length"
+                        src="/storage/img/load_table.svg"
+                        style="width: 24px"
+                    /><span class="font-bold">{{ totalData.open }}</span>
+                    <span class="pl-1">{{
+                        declOfNum(totalData.open, [
+                            "открыт",
+                            "открыто",
+                            "открыто",
+                        ])
+                    }}</span>
+                </p>
+                <p class="flex">
+                    <img
+                        v-if="!Object.keys(totalData).length"
+                        src="/storage/img/load_table.svg"
+                        style="width: 24px"
+                    /><span class="font-bold">{{ totalData.current }}</span
+                    ><span class="pl-1"> в работе</span>
+                </p>
+            </div>
         </div>
-
-    </div>
-    <h2 class="mt-3 text-xl font-bold border-b border-gray-300">Заказы</h2>
-    <a href="dashboard/export_month" class="update-button">
-
+        <h2 class="mt-3 text-xl font-bold border-b border-gray-300">Заказы</h2>
+        <a href="dashboard/export_month" class="update-button">
             <button
-
                 class="flex items-start space-x-1 mt-3 bg-green-500 hover:bg-green-700 dark:bg-blue-900 dark:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                        </svg>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                </svg>
                 <span>Экспорт всех заказов за месяц</span>
             </button>
         </a>
@@ -107,9 +145,20 @@
                                         status_id="1"
                                         @click.prevent="deleteOrders"
                                         class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="2"
                                         >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                            />
                                         </svg>
                                         <span>Удалить</span></a
                                     >
@@ -119,9 +168,20 @@
                                         :href="url"
                                         status_id="2"
                                         class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="2"
                                         >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                            />
                                         </svg>
                                         <span>Экспортировать</span></a
                                     >
@@ -176,9 +236,7 @@
                 </div>
             </div>
         </div>
-        <story
-            ref="openStoryPopup"
-        ></story>
+        <story ref="openStoryPopup"></story>
         <div v-if="!ordersData">
             <div
                 class="p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800"
@@ -245,6 +303,16 @@
                     >
                         Клиент
                     </th>
+                    <th
+                        class="px-2 py-1 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                       Сервис
+                    </th>
+                    <th
+                        class="px-2 py-1 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                        Действия
+                    </th>
                 </tr>
             </thead>
 
@@ -267,20 +335,19 @@
                     <td
                         class="px-2 w-20 py-2 font-medium text-sm whitespace-no-wrap border-b border-gray-200"
                     >
-                    <a
-                    href=""
-                    class="text-blue-600 hover:underline"
-                    @click.prevent="openStory(order.id)"
-                    >
-                         I-{{ order.id }}
-                    </a>
-
+                        <a
+                            href=""
+                            class="text-blue-600 hover:underline"
+                            @click.prevent="openStory(order.id)"
+                        >
+                            I-{{ order.id }}
+                        </a>
                     </td>
 
                     <td
                         class="px-2 w-52 py-1 text-sm whitespace-no-wrap border-b border-gray-200"
                     >
-                       {{ order.statuses.name }}
+                        {{ order.statuses.name }}
                     </td>
 
                     <td
@@ -330,7 +397,7 @@
                         </div>
                     </td>
                     <td
-                        class="px-2 py-1 w-96 text-sm whitespace-no-wrap text-gray-700 border-b border-gray-200"
+                        class="px-2 py-1 text-sm whitespace-no-wrap text-gray-700 border-b border-gray-200"
                     >
                         <div class="flex items-center">
                             <div>{{ order.malfunction }}</div>
@@ -350,6 +417,85 @@
                                     {{ order.client_phone }}
                                 </div>
                             </div>
+                        </div>
+                    </td>
+                    <td
+                        class="px-2 py-1 text-sm whitespace-no-wrap text-gray-700 border-b border-gray-200"
+                    >
+                        <div class="flex items-center">
+                            <div>{{ order.services.service_name }}</div>
+                        </div>
+                    </td>
+                    <td
+                        class="px-2 py-1 text-sm whitespace-no-wrap text-gray-700 border-b border-gray-200"
+                    >
+                        <div class="flex items-center">
+                            <a
+                                href="#"
+                                class="flex space-x-1 text-blue-600 hover:underline"
+                            >
+                            </a>
+                            <Menu
+                                as="div"
+                                class="relative inline-block text-left"
+                            >
+                                <div>
+                                    <MenuButton
+                                        class="flex space-x-1 text-blue-600 hover:underline"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                                            />
+                                        </svg>
+                                        <span>Перемещение</span>
+                                    </MenuButton>
+                                </div>
+                                <transition
+                                    enter-active-class="transition duration-100 ease-out"
+                                    enter-from-class="transform scale-95 opacity-0"
+                                    enter-to-class="transform scale-100 opacity-100"
+                                    leave-active-class="transition duration-75 ease-in"
+                                    leave-from-class="transform scale-100 opacity-100"
+                                    leave-to-class="transform scale-95 opacity-0"
+                                >
+                                    <MenuItems
+                                        class="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    >
+                                        <div class="px-1 py-1">
+                                            <MenuItem
+                                                as="div"
+                                                v-for="service in services"
+                                                :key="service.id"
+                                            >
+                                                <a
+                                                    href="#"
+                                                    v-if="
+                                                        service.id !=
+                                                        order.service
+                                                    "
+                                                    onclick="confirm('Переместить заказ?') || event.stopImmediatePropagation()"
+                                                    @click.prevent="switchService(order.id, service.id)"
+                                                    class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                                >
+                                                    <span>{{
+                                                        service.service_name
+                                                    }}</span>
+                                                </a>
+                                            </MenuItem>
+                                        </div>
+                                    </MenuItems>
+                                </transition>
+                            </Menu>
                         </div>
                     </td>
                 </tr>
@@ -383,7 +529,7 @@ import { ChevronDownIcon } from "@heroicons/vue/solid";
 import moment, { duration } from "moment";
 moment.locale("ru");
 export default {
-     setup() {
+    setup() {
         const toast = useToast();
         return {
             toast,
@@ -396,7 +542,7 @@ export default {
             search: "",
             order_id: "",
             services: {},
-            selectedService: 'all',
+            selectedService: "all",
             checked: [],
             selectPage: false,
             selectAll: false,
@@ -445,8 +591,8 @@ export default {
     methods: {
         getData() {
             axios.get("/dashboard/total").then((response) => {
-                this.totalData = response.data
-            })
+                this.totalData = response.data;
+            });
         },
         selectAllOrders() {
             axios
@@ -472,6 +618,7 @@ export default {
                 )
                 .then((response) => {
                     this.ordersData = response.data;
+                    console.log(this.ordersData)
                 });
         },
         openStory(id) {
@@ -489,6 +636,13 @@ export default {
                     this.toast.error("Ошибка удаления заказов.");
                 }
             });
+        },
+        switchService(order_id, service_id) {
+            axios.get("/dashboard/service/switch/" + order_id + "/" + service_id)
+            .then(response => {
+                this.getOrders()
+                this.toast.success("Перемещение успешно завершено.")
+            })
         },
         dateFormat: function (value) {
             if (value) {
