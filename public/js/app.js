@@ -24952,6 +24952,12 @@ __webpack_require__.r(__webpack_exports__);
       this.new_order.client_login = login;
       this.new_order.client_phone = phone;
       this.show = false;
+    },
+    fillMalfunction: function fillMalfunction(event) {
+      this.new_order.malfunction = event.target.innerHTML;
+    },
+    fillComplection: function fillComplection(event) {
+      this.new_order.product_complection = event.target.innerHTML;
     }
   }
 });
@@ -26398,43 +26404,49 @@ var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_32 = {
+  "class": "flex space-x-2"
+};
+var _hoisted_33 = {
   key: 0,
   "class": "text-sm text-red-500"
 };
-var _hoisted_33 = {
+var _hoisted_34 = {
   "class": "mb-6"
 };
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "appearance",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Внешний вид", -1
 /* HOISTED */
 );
 
-var _hoisted_35 = {
+var _hoisted_36 = {
   "class": "mb-6"
 };
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "product_complection",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Комплектация", -1
 /* HOISTED */
 );
 
-var _hoisted_37 = {
+var _hoisted_38 = {
+  "class": "flex space-x-2"
+};
+var _hoisted_39 = {
   "class": "mb-6"
 };
 
-var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "marks",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Заметки", -1
 /* HOISTED */
 );
 
-var _hoisted_39 = {
+var _hoisted_41 = {
   "class": "mt-4 flex space-x-4 float-right"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -26621,8 +26633,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "B500, RB950Ui..."
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.model_full_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.model_full_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[8] || (_cache[8] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillMalfunction && $options.fillMalfunction.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Перенастройка ОС"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillMalfunction && $options.fillMalfunction.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Черный экран"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[10] || (_cache[10] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillMalfunction && $options.fillMalfunction.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Не включается")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+                "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
                   return $setup.val.new_order.malfunction.$model = $event;
                 }),
                 id: "malfunction",
@@ -26633,17 +26663,47 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Перенастройка ОС и так далее..."
               }, null, 2
               /* CLASS */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.malfunction.$model]]), $setup.val.new_order.malfunction.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_32, "Необходимо ввести что с устройством случилось.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.malfunction.$model]]), $setup.val.new_order.malfunction.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_33, "Необходимо ввести что с устройством случилось.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [_hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
+                "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
                   return _ctx.new_order.appearance = $event;
                 }),
                 id: "appearance",
                 "class": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.appearance]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.appearance]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [_hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillComplection && $options.fillComplection.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноут + зарядка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[14] || (_cache[14] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillComplection && $options.fillComplection.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноут + сумка + зарядка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[15] || (_cache[15] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillComplection && $options.fillComplection.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноут без зарядки"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[16] || (_cache[16] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillComplection && $options.fillComplection.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Полная"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[17] || (_cache[17] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                  return $options.fillComplection && $options.fillComplection.apply($options, arguments);
+                }, ["prevent"])),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Со шнуром")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+                "onUpdate:modelValue": _cache[18] || (_cache[18] = function ($event) {
                   return _ctx.new_order.product_complection = $event;
                 }),
                 id: "product_complection",
@@ -26652,8 +26712,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Ноут + зарядка и тд..."
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.product_complection]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.product_complection]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [_hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+                "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
                   return _ctx.new_order.marks = $event;
                 }),
                 id: "marks",
@@ -26662,16 +26722,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Какую ОС ставить или комменты о клиенте :)"
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.marks]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.marks]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-items-end px-4 py-2 text-sm font-medium text-blue-900 bg-red-300 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[12] || (_cache[12] = function () {
+                onClick: _cache[20] || (_cache[20] = function () {
                   return $setup.closeModal && $setup.closeModal.apply($setup, arguments);
                 })
               }, " Закрыть "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[13] || (_cache[13] = function () {
+                onClick: _cache[21] || (_cache[21] = function () {
                   return $options.addOrder && $options.addOrder.apply($options, arguments);
                 })
               }, " Добавить ")])])];
