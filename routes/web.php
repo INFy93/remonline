@@ -5,6 +5,7 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\WorkingWithOrdersController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CheckOrderController;
 use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -25,6 +26,10 @@ Route::get('/', function () {
         return view('auth.login');
     }
 })->name('enter');
+
+/* client can see status of order */
+Route::get('/client', [CheckOrderController::class, 'index']);
+
 Route::group(['middleware' => 'auth'], function() {
     /* logout from app */
     Route::get('/logout', [LoginController::class, 'logout']);
