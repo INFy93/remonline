@@ -12,10 +12,10 @@ class CheckOrderController extends Controller
         return view('client.checking_order_status');
     }
 
-    public function getOrderForChecking($id)
+    public function getOrderForChecking($code)
     {
         $order = Order::with(['statuses', 'users'])
-        ->where('id', $id)
+        ->where('code', $code)
         ->first();
 
         return response()->json($order);

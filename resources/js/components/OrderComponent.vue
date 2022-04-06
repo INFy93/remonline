@@ -255,7 +255,7 @@
                         class="px-2 w-20 py-2 font-medium text-sm whitespace-no-wrap border-b border-gray-200"
                     >
                         <a href="#" class="text-blue-600 hover:underline" @click.prevent="openEdit(order.id)">
-                         I-{{ order.id }}
+                         I-{{ leadingZeros(order.id) }}
                         </a>
                     </td>
 
@@ -618,6 +618,9 @@ export default {
                     ? 2
                     : cases[number % 10 < 5 ? number % 10 : 5]
             ];
+        },
+        leadingZeros(number) {
+            return number.toString().padStart(6, '0')
         },
     },
 };
