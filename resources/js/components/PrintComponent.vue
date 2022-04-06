@@ -27,7 +27,7 @@
         </table>
         <p style="text-align: center" class="mt-2">
             <span style="text-decoration: underline; font-size: 9pt"
-                >Квитанция <strong>№ I-{{ userdata.id }}</strong> от
+                >Квитанция <strong>№ {{ userdata.services.service_code }}-{{ leadingZeros(userdata.id) }}</strong> от
                 <em>{{ dateFormat(userdata.created_at) }}</em></span
             >
         </p>
@@ -205,7 +205,7 @@
         <p style="text-align: center"><span style="font-size: 9pt"> </span></p>
         <p style="text-align: center" class="mt-4">
             <span style="text-decoration: underline; font-size: 9pt"
-                >Квитанция <strong>№ I-{{ userdata.id }}</strong> от
+                >Квитанция <strong>№ {{ userdata.services.service_code }}-{{ leadingZeros(userdata.id) }}</strong> от
                 <em>{{ dateFormat(userdata.created_at) }}</em></span
             >
         </p>
@@ -266,6 +266,9 @@ export default {
                     .format("LL", { trim: false, useGrouping: false })
                     .replace(/,/g, "");
             }
+        },
+        leadingZeros(number) {
+            return number.toString().padStart(5, '0')
         },
     },
 };

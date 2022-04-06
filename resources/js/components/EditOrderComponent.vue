@@ -290,7 +290,8 @@ export default {
                 appearance: "Царапины, потертости",
                 marks: "",
                 id: "",
-                created_at: ""
+                created_at: "",
+                services: {}
             },
             phone: "",
             show: false,
@@ -361,6 +362,7 @@ export default {
                 this.order.marks = data1.data.marks;
                 this.order.id = data1.data.id;
                 this.order.created_at = data1.data.created_at;
+                this.order.services = data1.data.services;
 
                 this.story = data2.data;
             }));

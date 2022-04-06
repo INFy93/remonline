@@ -24711,7 +24711,8 @@ moment__WEBPACK_IMPORTED_MODULE_3___default().locale("ru");
         appearance: "Царапины, потертости",
         marks: "",
         id: "",
-        created_at: ""
+        created_at: "",
+        services: {}
       },
       phone: "",
       show: false,
@@ -24780,6 +24781,7 @@ moment__WEBPACK_IMPORTED_MODULE_3___default().locale("ru");
         _this.order.marks = data1.data.marks;
         _this.order.id = data1.data.id;
         _this.order.created_at = data1.data.created_at;
+        _this.order.services = data1.data.services;
         _this.story = data2.data;
       }));
     },
@@ -25229,6 +25231,9 @@ moment__WEBPACK_IMPORTED_MODULE_1___default().locale("ru");
           useGrouping: false
         }).replace(/,/g, "");
       }
+    },
+    leadingZeros: function leadingZeros(number) {
+      return number.toString().padStart(5, '0');
     }
   }
 });
@@ -27953,7 +27958,7 @@ var _hoisted_60 = {
   }
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "№ I-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.id), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "№ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.services.service_code) + "-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.leadingZeros($props.userdata.id)), 1
   /* TEXT */
   ), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("em", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.dateFormat($props.userdata.created_at)), 1
   /* TEXT */
@@ -27971,7 +27976,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )])])])])]), _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_34, "С условиями ремонта ознакомлен и согласен _____________________ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.client_login), 1
   /* TEXT */
-  )])])])])]), _hoisted_35, _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "№ I-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.id), 1
+  )])])])])]), _hoisted_35, _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "№ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.services.service_code) + "-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.leadingZeros($props.userdata.id)), 1
   /* TEXT */
   ), _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("em", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.dateFormat($props.userdata.created_at)), 1
   /* TEXT */
