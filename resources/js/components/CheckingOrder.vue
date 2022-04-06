@@ -44,7 +44,7 @@
                 <p><strong>Сервис:</strong> {{ order.services.service_name}}</p>
                 <p><strong>Номер заказа:</strong> {{ order.services.service_code }}-{{ leadingZeros(order.id) }}</p>
                 <p><strong>Время приема:</strong> {{ dateFormat(order.created_at) }}</p>
-                <p><strong>Последнее изменение статуса:</strong> {{ dateFormat(order.updated_at) }}</p>
+                <p><strong>Изменение статуса:</strong> {{ dateFormat(order.updated_at) }}</p>
                 <p><strong>Статус:</strong> {{ order.statuses.name }}</p>
             </div>
             <div v-if="noOrder" class="mt-5 text-sm text-red-500" style="width: 25rem;">Заказ не найден. Проверьте правильность ввода кода заказа. </div>
