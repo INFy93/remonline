@@ -255,7 +255,7 @@
                         class="px-2 w-20 py-2 font-medium text-sm whitespace-no-wrap border-b border-gray-200"
                     >
                         <a href="#" class="text-blue-600 hover:underline" @click.prevent="openEdit(order.id)">
-                         I-{{ leadingZeros(order.id) }}
+                         {{ order.services.service_code }}-{{ leadingZeros(order.id) }}
                         </a>
                     </td>
 
