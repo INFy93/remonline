@@ -24640,7 +24640,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       val: (0,_vuelidate_core__WEBPACK_IMPORTED_MODULE_1__["default"])(),
       order: {},
-      orderCode: '',
+      orderCode: "",
       hasErrors: false
     };
   },
@@ -24650,9 +24650,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   validations: {
     orderCode: {
-      required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.helpers.withMessage('Необходимо заполнить поле', _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.required),
-      max: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.helpers.withMessage('Длина кода - 6 символов', (0,_vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.maxLength)(6)),
-      min: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.helpers.withMessage('Длина кода - 6 символов', (0,_vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.minLength)(6))
+      required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.helpers.withMessage("Необходимо заполнить поле", _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.required),
+      max: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.helpers.withMessage("Длина кода - 6 символов", (0,_vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.maxLength)(6)),
+      min: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.helpers.withMessage("Длина кода - 6 символов", (0,_vuelidate_validators__WEBPACK_IMPORTED_MODULE_2__.minLength)(6))
     }
   },
   created: function created() {},
@@ -24662,7 +24662,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.val.$validate();
       if (this.val.$pending || this.val.$error) return;
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/client/order/' + this.orderCode).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/client/order/" + this.orderCode).then(function (response) {
         _this.order = response.data;
         console.log(response);
       });
