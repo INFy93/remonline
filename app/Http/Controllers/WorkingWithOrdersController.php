@@ -11,7 +11,7 @@ class WorkingWithOrdersController extends Controller
 {
     public function openOrder($id)
     {
-        $order = Order::find($id);
+        $order = Order::with('services')->find($id);
 
         return response()->json($order);
     }
