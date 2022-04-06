@@ -29,6 +29,8 @@ Route::get('/', function () {
 
 /* client can see status of order */
 Route::get('/client', [CheckOrderController::class, 'index']);
+/* get order info by unique code */
+Route::get('/client/order/{code}', [CheckOrderController::class, 'getOrderForChecking']);
 
 Route::group(['middleware' => 'auth'], function() {
     /* logout from app */
