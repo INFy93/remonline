@@ -240,6 +240,17 @@
                                 >{{ userdata.marks }}</span
                             >
                         </p>
+                        <p>
+                            <span style="font-size: 9pt"
+                                ><strong>Проверить статус заказа:</strong></span
+                            ><br /><span style="font-size: 9pt"
+                                >https://service.crimeastar.net/client</span
+                            >
+                            <br>
+                            <span style="font-size: 9pt"
+                                ><strong>Код заказа:</strong> {{ userdata.code }}</span
+                            >
+                        </p>
                     </td>
                 </tr>
             </tbody>
