@@ -25187,7 +25187,7 @@ moment__WEBPACK_IMPORTED_MODULE_4___default().locale("ru");
       return titles[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]];
     },
     leadingZeros: function leadingZeros(number) {
-      return number.toString().padStart(6, '0');
+      return number.toString().padStart(5, '0');
     }
   }
 });

@@ -620,7 +620,7 @@ export default {
             ];
         },
         leadingZeros(number) {
-            return number.toString().padStart(6, '0')
+            return number.toString().padStart(5, '0')
         },
     },
 };
