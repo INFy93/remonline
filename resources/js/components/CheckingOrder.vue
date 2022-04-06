@@ -1,6 +1,6 @@
 <template>
     <div class="grid grid-cols-1 justify-items-center">
-        <div class="mt-4">
+        <div class="mt-4 ml-4" style="width: 25rem;">
             <label
                 for="product"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -39,11 +39,15 @@
                     Проверить
                 </button>
             </a>
-            <div v-if="order.id">
-                <p><strong>Номер заказа:</strong> I-{{ order.id }}</p>
-                <p><strong>Время приема:</strong> {{ order.created_at }}</p>
+
+            <div v-if="order.id" class="mt-5" style="width: 25rem;">
+                <p><strong>Сервис:</strong> {{ order.services.service_name}}</p>
+                <p><strong>Номер заказа:</strong> {{ order.services.service_code }}-{{ leadingZeros(order.id) }}</p>
+                <p><strong>Время приема:</strong> {{ dateFormat(order.created_at) }}</p>
+                <p><strong>Последнее изменение статуса:</strong> {{ dateFormat(order.updated_at) }}</p>
                 <p><strong>Статус:</strong> {{ order.statuses.name }}</p>
             </div>
+            <div v-if="noOrder" class="mt-5 text-sm text-red-500" style="width: 25rem;">Заказ не найден. Проверьте правильность ввода кода заказа. </div>
         </div>
     </div>
 </template>
@@ -51,13 +55,15 @@
 import axios from "axios";
 import { required, maxLength, minLength, helpers } from "@vuelidate/validators";
 import useVuelidate from "@vuelidate/core";
+import moment, { duration } from "moment";
+moment.locale("ru");
 export default {
     data: function () {
         return {
             val: useVuelidate(),
             order: {},
             orderCode: "",
-            hasErrors: false,
+            noOrder: false,
         };
     },
     components: {},
@@ -79,10 +85,24 @@ export default {
         checkOrderStatus() {
             this.val.$validate();
             if (this.val.$pending || this.val.$error) return;
+            this.noOrder = false
             axios.get("/client/order/" + this.orderCode).then((response) => {
                 this.order = response.data;
-                console.log(response);
+
+                if (!Object.keys(this.order).length) {
+                    this.noOrder = true
+                }
             });
+        },
+        leadingZeros(number) {
+            return number.toString().padStart(5, '0')
+        },
+          dateFormat: function (value) {
+            if (value) {
+                return moment(String(value))
+                    .format("lll", { trim: false, useGrouping: false })
+                    .replace(/,/g, "");
+            }
         },
     },
 };

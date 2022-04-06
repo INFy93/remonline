@@ -14,7 +14,7 @@ class CheckOrderController extends Controller
 
     public function getOrderForChecking($code)
     {
-        $order = Order::with(['statuses', 'users'])
+        $order = Order::with(['statuses', 'services'])
         ->where('code', $code)
         ->first();
 

@@ -280,6 +280,7 @@ export default {
     data: function () {
         return {
             order: {
+                code: '',
                 client_login: "",
                 client_phone: "",
                 product: "",
@@ -363,6 +364,7 @@ export default {
                 this.order.id = data1.data.id;
                 this.order.created_at = data1.data.created_at;
                 this.order.services = data1.data.services;
+                this.order.code = data1.data.code;
 
                 this.story = data2.data;
             }));

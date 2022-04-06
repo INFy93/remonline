@@ -19,8 +19,10 @@ class WorkingWithOrdersController extends Controller
     public function addOrder(Request $req)
     {
         $today = date("Y-m-d H:i:s", time()+60*60*24*4);
+
         //creating array for db insert from request
         $new_order = [
+            'code' => \Stuff::generateOrderCode(),
             'client_login' => $req->order['client_login'],
             'appearance' => $req->order['appearance'],
             'client_phone' => $req->order['client_phone'],
