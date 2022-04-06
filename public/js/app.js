@@ -27837,8 +27837,11 @@ var _hoisted_26 = {
     "font-size": "9pt"
   }
 };
+var _hoisted_27 = {
+  key: 0
+};
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   style: {
     "font-size": "9pt"
   }
@@ -27846,11 +27849,11 @@ var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   style: {
     "font-size": "9pt"
   }
@@ -27858,47 +27861,47 @@ var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_31 = {
+var _hoisted_32 = {
   style: {
     "font-size": "9pt"
   }
 };
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Код заказа:", -1
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Код заказа:", -1
 /* HOISTED */
 );
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p><span style=\"font-size:9pt;\"></span></p><p style=\"text-align:justify;\" class=\"mt-2\"><span style=\"font-size:9pt;\"><strong>ПРАВИЛА ПРИЕМА ТЕХНИКИ В РЕМОНТ</strong></span></p><p style=\"text-align:justify;\"><span style=\"font-size:9pt;\"><span style=\"font-size:9pt;\">1. Стоимость всех услуг уточняйте заранее во избежание конфликтных ситуаций. На некоторые виды услуг точная стоимость определяется в процессе выполнения работы, в таких случаях обговаривается приблизительная стоимость. Точная стоимость может быть озвучена после проведения диагностики.</span><br><span style=\"font-size:9pt;\"> 2. Документом, подтверждающим получение Исполнителем оборудования на ответственное хранение от Владельца, является талон (квитанция) о приеме техники, в котором указывается модель принятого оборудования, его серийный номер, комплектация, фамилия Владельца и его контактная информация.</span><br><span style=\"font-size:9pt;\">3. <strong>ОБОРУДОВАНИЕ, С СОГЛАСИЯ ЗАКАЗЧИКА, ПРИНЯТО БЕЗ РАЗБОРКИ И ПРОВЕРКИ НЕИСПРАВНОСТЕЙ, БЕЗ ПРОВЕРКИ ВНУТРЕННИХ ПОВРЕЖДЕНИЙ. ЗАКАЗЧИК СОГЛАСЕН, ЧТО ВСЕ НЕИСПРАВНОСТИ И ВНУТРЕННИЕ ПОВРЕЖДЕНИЯ, КОТОРЫЕ МОГУТ БЫТЬ ОБНАРУЖЕНЫ В ОБОРУДОВАНИИ ПРИ ЕГО ТЕХНИЧЕСКОМ ОБСЛУЖИВАНИИ, ВОЗНИКЛИ ДО ПРИЕМА ОБОРУДОВАНИЯ ПО ЭТОМУ ТАЛОНУ (КВИТАНЦИИ).</strong></span><br><span style=\"font-size:9pt;\">4. Оборудование принимается в сервис в чистом виде. Перед проведением диагностики (в случае необходимости) сервис производит чистку самостоятельно, без предупреждения клиента.</span><br><span style=\"font-size:9pt;\"> 5. Неисправности, выявленные в процессе диагностики, и не заявленные Заказчиком, будут устраняться только при оформлении нового запроса на ремонт, после оплаты уже проведенных работ.</span><br><span style=\"font-size:9pt;\">6. Гарантия распространяется ТОЛЬКО на выполненные работы и замененные запчасти. Гарантия не распространяется на аппараты, которые подверглись воздействию жидкости или механическому воздействию (удар, падение), а также в случае неквалифицированного ремонта или вмешательства сторонними ремонтными организациями. За любые изменения работоспособности данного оборудования в процессе ремонта и диагностики ООО &quot;Центр развития информационных технологий &quot;ГИГАБАЙТ&quot; ответственности не несет.</span><br><span style=\"font-size:9pt;\">7. Принятое оборудование возвращается только по предъявленному оригиналу талона (квитанции), в комплектации, указанной в талоне (квитанции). В случае утери Талона (квитанции) оборудование возвращается Владельцу только по заявлению и при предъявлении документа, удостоверяющего личность Заказчика, и документов, подтверждающих право владения оборудованием (устройством, техникой).</span><br><span style=\"font-size:9pt;\">8. <strong>МАСТЕРСКАЯ НЕ НЕСЁТ ОТВЕТСТВЕННОСТИ ЗА ВОЗМОЖНУЮ ПОТЕРЮ ДАННЫХ, НАСТРОЕК, ПО, ИНФОРМАЦИИ И Т.П., ХРАНИМЫХ ВО ВНУТРЕННЕЙ ПАМЯТИ, НА СЪЁМНЫХ НОСИТЕЛЯХ, В ХОДЕ РЕМОНТА ИЛИ ДИАГНОСТИКИ ОБОРУДОВАНИЯ, </strong></span><strong> А ТАКЖЕ ЗА ОСТАВЛЕННЫЕ В ОБОРУДОВАНИИ USB НАКОПИТЕЛИ, АДАПТЕРЫ И Т.П.</strong></span><br><span style=\"font-size:9pt;\">9. Клиент не возражает на внесение изменений в визуальное оформление рабочего стола устройства, а также, добавления на рабочий стол ссылок на страницу оператора «Гигабайт» в социальных сетях (ВКонтакте, Одноклассники, Фейсбук, Инстаграмм). По желанию клиента, все внесенные изменения могут быть удалены.<br><span style=\"font-size:9pt;\">10. Срок выполнения ремонта (выполнения ремонтных работ по устранению недостатка) составляет от 1 до 15 рабочих дней при условии наличия необходимых запасных частей (з/ч) на складе. В случае заказа з/ч, срок ремонта может быть увеличен на срок от 15 до 45 рабочих дней.</span><br><span style=\"font-size:9pt;\"> 11. Сервисный Центр ООО &quot;Центр развития информационных технологий &quot;ГИГАБАЙТ&quot; принимает на ответственное хранение оборудование от Владельца по Талону (квитанции) на весь срок выполнения работ. Бесплатный срок хранения готового оборудования – 15 дней со дня уведомления Заказчика. По истечении данного срока стоимость хранения оборудования составит 30 рублей в сутки. В случае неявки Владельца за оборудованием в течение 100 дней с момента письменного оповещения Заказчика, оборудование будет реализовано в счет причитающихся Сервисному Центру платежей (согласно главе 4 Правил бытового обслуживания населения в Российской Федерации.), либо в случае его неработоспособности или непригодности для ремонта – утилизировано.</span><br><span style=\"font-size:9pt;\"> 12. Мастерская оставляет за собой право в одностороннем порядке отказать в ремонте оборудования без объяснения причины принятого решения.</span><br><span style=\"font-size:9pt;\"> 13. <strong>КЛИЕНТ ПРИНИМАЕТ НА СЕБЯ ВЕСЬ РИСК, СВЯЗАННЫЙ С ПРОЯВЛЕНИЕМ В ПРОЦЕССЕ РЕМОНТА НЕИСПРАВНОСТЕЙ, НЕ УКАЗАННЫХ В КВИТАНЦИИ.</strong></span></span></p><p style=\"text-align:justify;\"><span style=\"font-size:9pt;\"></span></p>", 4);
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p><span style=\"font-size:9pt;\"></span></p><p style=\"text-align:justify;\" class=\"mt-2\"><span style=\"font-size:9pt;\"><strong>ПРАВИЛА ПРИЕМА ТЕХНИКИ В РЕМОНТ</strong></span></p><p style=\"text-align:justify;\"><span style=\"font-size:9pt;\"><span style=\"font-size:9pt;\">1. Стоимость всех услуг уточняйте заранее во избежание конфликтных ситуаций. На некоторые виды услуг точная стоимость определяется в процессе выполнения работы, в таких случаях обговаривается приблизительная стоимость. Точная стоимость может быть озвучена после проведения диагностики.</span><br><span style=\"font-size:9pt;\"> 2. Документом, подтверждающим получение Исполнителем оборудования на ответственное хранение от Владельца, является талон (квитанция) о приеме техники, в котором указывается модель принятого оборудования, его серийный номер, комплектация, фамилия Владельца и его контактная информация.</span><br><span style=\"font-size:9pt;\">3. <strong>ОБОРУДОВАНИЕ, С СОГЛАСИЯ ЗАКАЗЧИКА, ПРИНЯТО БЕЗ РАЗБОРКИ И ПРОВЕРКИ НЕИСПРАВНОСТЕЙ, БЕЗ ПРОВЕРКИ ВНУТРЕННИХ ПОВРЕЖДЕНИЙ. ЗАКАЗЧИК СОГЛАСЕН, ЧТО ВСЕ НЕИСПРАВНОСТИ И ВНУТРЕННИЕ ПОВРЕЖДЕНИЯ, КОТОРЫЕ МОГУТ БЫТЬ ОБНАРУЖЕНЫ В ОБОРУДОВАНИИ ПРИ ЕГО ТЕХНИЧЕСКОМ ОБСЛУЖИВАНИИ, ВОЗНИКЛИ ДО ПРИЕМА ОБОРУДОВАНИЯ ПО ЭТОМУ ТАЛОНУ (КВИТАНЦИИ).</strong></span><br><span style=\"font-size:9pt;\">4. Оборудование принимается в сервис в чистом виде. Перед проведением диагностики (в случае необходимости) сервис производит чистку самостоятельно, без предупреждения клиента.</span><br><span style=\"font-size:9pt;\"> 5. Неисправности, выявленные в процессе диагностики, и не заявленные Заказчиком, будут устраняться только при оформлении нового запроса на ремонт, после оплаты уже проведенных работ.</span><br><span style=\"font-size:9pt;\">6. Гарантия распространяется ТОЛЬКО на выполненные работы и замененные запчасти. Гарантия не распространяется на аппараты, которые подверглись воздействию жидкости или механическому воздействию (удар, падение), а также в случае неквалифицированного ремонта или вмешательства сторонними ремонтными организациями. За любые изменения работоспособности данного оборудования в процессе ремонта и диагностики ООО &quot;Центр развития информационных технологий &quot;ГИГАБАЙТ&quot; ответственности не несет.</span><br><span style=\"font-size:9pt;\">7. Принятое оборудование возвращается только по предъявленному оригиналу талона (квитанции), в комплектации, указанной в талоне (квитанции). В случае утери Талона (квитанции) оборудование возвращается Владельцу только по заявлению и при предъявлении документа, удостоверяющего личность Заказчика, и документов, подтверждающих право владения оборудованием (устройством, техникой).</span><br><span style=\"font-size:9pt;\">8. <strong>МАСТЕРСКАЯ НЕ НЕСЁТ ОТВЕТСТВЕННОСТИ ЗА ВОЗМОЖНУЮ ПОТЕРЮ ДАННЫХ, НАСТРОЕК, ПО, ИНФОРМАЦИИ И Т.П., ХРАНИМЫХ ВО ВНУТРЕННЕЙ ПАМЯТИ, НА СЪЁМНЫХ НОСИТЕЛЯХ, В ХОДЕ РЕМОНТА ИЛИ ДИАГНОСТИКИ ОБОРУДОВАНИЯ, </strong></span><strong> А ТАКЖЕ ЗА ОСТАВЛЕННЫЕ В ОБОРУДОВАНИИ USB НАКОПИТЕЛИ, АДАПТЕРЫ И Т.П.</strong></span><br><span style=\"font-size:9pt;\">9. Клиент не возражает на внесение изменений в визуальное оформление рабочего стола устройства, а также, добавления на рабочий стол ссылок на страницу оператора «Гигабайт» в социальных сетях (ВКонтакте, Одноклассники, Фейсбук, Инстаграмм). По желанию клиента, все внесенные изменения могут быть удалены.<br><span style=\"font-size:9pt;\">10. Срок выполнения ремонта (выполнения ремонтных работ по устранению недостатка) составляет от 1 до 15 рабочих дней при условии наличия необходимых запасных частей (з/ч) на складе. В случае заказа з/ч, срок ремонта может быть увеличен на срок от 15 до 45 рабочих дней.</span><br><span style=\"font-size:9pt;\"> 11. Сервисный Центр ООО &quot;Центр развития информационных технологий &quot;ГИГАБАЙТ&quot; принимает на ответственное хранение оборудование от Владельца по Талону (квитанции) на весь срок выполнения работ. Бесплатный срок хранения готового оборудования – 15 дней со дня уведомления Заказчика. По истечении данного срока стоимость хранения оборудования составит 30 рублей в сутки. В случае неявки Владельца за оборудованием в течение 100 дней с момента письменного оповещения Заказчика, оборудование будет реализовано в счет причитающихся Сервисному Центру платежей (согласно главе 4 Правил бытового обслуживания населения в Российской Федерации.), либо в случае его неработоспособности или непригодности для ремонта – утилизировано.</span><br><span style=\"font-size:9pt;\"> 12. Мастерская оставляет за собой право в одностороннем порядке отказать в ремонте оборудования без объяснения причины принятого решения.</span><br><span style=\"font-size:9pt;\"> 13. <strong>КЛИЕНТ ПРИНИМАЕТ НА СЕБЯ ВЕСЬ РИСК, СВЯЗАННЫЙ С ПРОЯВЛЕНИЕМ В ПРОЦЕССЕ РЕМОНТА НЕИСПРАВНОСТЕЙ, НЕ УКАЗАННЫХ В КВИТАНЦИИ.</strong></span></span></p><p style=\"text-align:justify;\"><span style=\"font-size:9pt;\"></span></p>", 4);
 
-var _hoisted_37 = {
+var _hoisted_38 = {
   style: {
     "width": "100%"
   },
   border: "0"
 };
-var _hoisted_38 = {
+var _hoisted_39 = {
   style: {
     "width": "50%"
   },
   colspan: "2",
   valign: "top"
 };
-var _hoisted_39 = {
+var _hoisted_40 = {
   style: {
     "text-align": "right"
   }
 };
-var _hoisted_40 = {
+var _hoisted_41 = {
   style: {
     "font-size": "9pt"
   }
 };
 
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   style: {
     "text-align": "center"
   }
@@ -27910,7 +27913,7 @@ var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   style: {
     "text-align": "center"
   }
@@ -27922,106 +27925,106 @@ var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_43 = {
+var _hoisted_44 = {
   style: {
     "text-align": "center"
   },
   "class": "mt-4"
 };
-var _hoisted_44 = {
+var _hoisted_45 = {
   style: {
     "text-decoration": "underline",
     "font-size": "9pt"
   }
 };
 
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Квитанция ");
+var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Квитанция ");
 
-var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" от ");
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" от ");
 
-var _hoisted_47 = {
+var _hoisted_48 = {
   style: {
     "width": "100%"
   },
   border: "0",
   "class": "mt-2"
 };
-var _hoisted_48 = {
+var _hoisted_49 = {
   style: {
     "width": "50%"
   }
 };
-var _hoisted_49 = {
+var _hoisted_50 = {
   style: {
     "font-size": "9pt"
   }
 };
 
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Клиент:", -1
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Клиент:", -1
 /* HOISTED */
 );
 
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_52 = {
+var _hoisted_53 = {
   style: {
     "font-size": "9pt"
   }
 };
 
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Устройство:", -1
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Устройство:", -1
 /* HOISTED */
 );
 
-var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_55 = {
+var _hoisted_56 = {
   style: {
     "font-size": "9pt"
   }
 };
 
-var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Комплектация:", -1
+var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Комплектация:", -1
 /* HOISTED */
 );
 
-var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_58 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_58 = {
+var _hoisted_59 = {
   style: {
     "font-size": "9pt"
   }
 };
 
-var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Внешний вид:", -1
+var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Внешний вид:", -1
 /* HOISTED */
 );
 
-var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_61 = {
+var _hoisted_62 = {
   style: {
     "font-size": "9pt"
   }
 };
 
-var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Неисправность:", -1
+var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Неисправность:", -1
 /* HOISTED */
 );
 
-var _hoisted_63 = {
+var _hoisted_64 = {
   valign: "top"
 };
 
-var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   style: {
     "font-size": "9pt"
   }
@@ -28029,11 +28032,11 @@ var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_66 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_66 = {
+var _hoisted_67 = {
   style: {
     "font-size": "9pt"
   }
@@ -28055,25 +28058,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_24, _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.marks), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_27, _hoisted_28, _hoisted_29, _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.code), 1
+  )]), $props.userdata.code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_27, [_hoisted_28, _hoisted_29, _hoisted_30, _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_32, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.code), 1
   /* TEXT */
-  )])])])])])]), _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_40, "С условиями ремонта ознакомлен и согласен _____________________ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.client_login), 1
+  )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_41, "С условиями ремонта ознакомлен и согласен _____________________ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.client_login), 1
   /* TEXT */
-  )])])])])]), _hoisted_41, _hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "№ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.services.service_code) + "-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.leadingZeros($props.userdata.id)), 1
+  )])])])])]), _hoisted_42, _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_45, [_hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "№ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.services.service_code) + "-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.leadingZeros($props.userdata.id)), 1
   /* TEXT */
-  ), _hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("em", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.dateFormat($props.userdata.created_at)), 1
+  ), _hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("em", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.dateFormat($props.userdata.created_at)), 1
   /* TEXT */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_47, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_49, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.client_login) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.client_phone), 1
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_50, [_hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.client_login) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.client_phone), 1
   /* TEXT */
-  )]), _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_52, [_hoisted_53, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.product) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.model) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.model_full_name), 1
+  )]), _hoisted_52, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_53, [_hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.product) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.model) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.model_full_name), 1
   /* TEXT */
-  )]), _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_55, [_hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.product_complection), 1
+  )]), _hoisted_55, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_56, [_hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.product_complection), 1
   /* TEXT */
-  )]), _hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_58, [_hoisted_59, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.appearance), 1
+  )]), _hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_59, [_hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.appearance), 1
   /* TEXT */
-  )]), _hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_61, [_hoisted_62, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.malfunction), 1
+  )]), _hoisted_61, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_62, [_hoisted_63, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.malfunction), 1
   /* TEXT */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_63, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_64, _hoisted_65, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_66, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.marks), 1
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_64, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_65, _hoisted_66, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_67, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.userdata.marks), 1
   /* TEXT */
   )])])])])])]);
 }

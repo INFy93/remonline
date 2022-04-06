@@ -63,7 +63,7 @@
                                 >{{userdata.marks}}</span
                             >
                         </p>
-                        <p>
+                        <p v-if="userdata.code">
                             <span style="font-size: 9pt"
                                 ><strong>Проверить статус заказа:</strong></span
                             ><br /><span style="font-size: 9pt"
