@@ -156,6 +156,28 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                             >Бренд*</label
                                         >
+                                        <span class="text-sm font-medium">ПК</span>
+                                         <div class="flex space-x-2">
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Черный сис</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Белый сис</a>
+                                         </div>
+                                         <span class="text-sm font-medium">Ноутбуки</span>
+                                        <div class="flex space-x-2">
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Asus</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Acer</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Lenovo</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">HP</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">MSI</a>
+                                        </div>
+                                        <span class="text-sm font-medium">Роутеры</span>
+                                        <div class="flex space-x-2">
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">TP-LINK</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mercusys</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mikrotik</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Zyxel</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">D-Link</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Huawei</a>
+                                         </div>
                                         <input
                                             type="text"
                                             v-model="val.new_order.model.$model"
@@ -190,6 +212,8 @@
                                                     <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Перенастройка ОС</a>
                                                     <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Черный экран</a>
                                                     <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Не включается</a>
+                                                    <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Не загружается</a>
+                                                    <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">(Пере)-настройка роутера</a>
                                         </div>
                                         <textarea
                                             v-model="val.new_order.malfunction.$model"
@@ -220,6 +244,11 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                             >Комплектация</label
                                         >
+                                        <div class="flex space-x-2">
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Роутер + бп</a>
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Роутер без бп</a>
+                                                    <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Роутер новый, в коробке</a>
+                                        </div>
                                         <div class="flex space-x-2">
                                                     <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Ноут + зарядка</a>
                                                     <a href="#" @click="addComplection" class="text-sm text-blue-600 hover:underline">Ноут + зарядка + сумка</a>
@@ -395,6 +424,9 @@ export default {
         },
         addComplection(event) {
             this.new_order.product_complection = event.target.innerHTML
+        },
+        addModel(event) {
+            this.new_order.model = event.target.innerHTML
         },
     },
 };
