@@ -37,6 +37,8 @@ import OrderButton from './components/OrderButtonComponent.vue';
 import OpenOrders from './components/OpenOrdersComponent.vue';
 import EditOrder from './components/EditOrderComponent.vue';
 import Print from './components/PrintComponent.vue';
+
+
 import CheckOrder from './components/CheckingOrder.vue';
 
 import Admin from './components/admin/AdminComponent.vue'

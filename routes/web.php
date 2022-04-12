@@ -33,6 +33,8 @@ Route::get('/client', [CheckOrderController::class, 'index']);
 Route::get('/client/order/{code}', [CheckOrderController::class, 'getOrderForChecking']);
 
 Route::group(['middleware' => 'auth'], function() {
+    /* Mikrotik conf generator */
+    Route::view('/mikrotik', 'mikrotik');
     /* logout from app */
     Route::get('/logout', [LoginController::class, 'logout']);
     /* main page */

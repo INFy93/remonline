@@ -336,7 +336,7 @@
                             class="text-blue-600 hover:underline"
                             @click.prevent="openStory(order.id)"
                         >
-                            I-{{ order.id }}
+                            {{ order.services.service_code }}-{{ leadingZeros(order.id) }}
                         </a>
                     </td>
 
@@ -653,6 +653,9 @@ export default {
                     ? 2
                     : cases[number % 10 < 5 ? number % 10 : 5]
             ];
+        },
+        leadingZeros(number) {
+            return number.toString().padStart(5, '0')
         },
     },
 };

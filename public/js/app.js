@@ -25674,6 +25674,9 @@ moment__WEBPACK_IMPORTED_MODULE_5___default().locale("ru");
     declOfNum: function declOfNum(number, titles) {
       var cases = [2, 0, 1, 1, 1, 2];
       return titles[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]];
+    },
+    leadingZeros: function leadingZeros(number) {
+      return number.toString().padStart(5, '0');
     }
   }
 });
@@ -29448,7 +29451,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
         return $options.openStory(order.id);
       }, ["prevent"])
-    }, " I-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.id), 9
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.services.service_code) + "-" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.leadingZeros(order.id)), 9
     /* TEXT, PROPS */
     , _hoisted_61)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_62, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.statuses.name), 1
     /* TEXT */
