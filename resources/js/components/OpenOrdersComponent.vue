@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-end items-center ml-auto">
-        <div class="wrapper w-36 bg-gray-700 rounded-lg cursor-pointer" @click="showOnlyOpen">
+        <div class="wrapper w-36 bg-gray-700 rounded-lg cursor-pointer" :class="{'bg-gray-500': isOpen}" @click="showOnlyOpen">
             <div  class="flex text-white rounded-lg py-2 px-2 space-x-3 justify-left  items-center">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

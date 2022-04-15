@@ -4,139 +4,185 @@
             <div>
                 <button-component @add-event="getOrders"></button-component>
             </div>
-                 <open-orders-component ref="open" @showOpen="isOnlyOpen"></open-orders-component>
+            <open-orders-component
+                ref="open"
+                @showOpen="isOnlyOpen"
+            ></open-orders-component>
         </div>
         <edit-order-component
             @edit-event="getOrders"
             ref="openEditPopup"
         ></edit-order-component>
+        <div
+            class="flex p-2 mb-4 w-1/3 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
+            role="alert"
+        >
+            <svg
+                class="inline flex-shrink-0 mr-3 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+            <div>
+                <span class="font-medium">Внимание!</span> Включено отображение
+                только текущих заказов.
+            </div>
+        </div>
         <div class="flex flex-row items-center">
-                <div
-                    v-if="ordersData.data"
-                    class="bg-white rounded right-0 flex items-center w-full max-w-xl h-10 mb-2 p-2 shadow-sm border border-gray-200"
+            <div
+                v-if="ordersData.data"
+                class="bg-white rounded right-0 flex items-center w-full max-w-xl h-10 mb-2 p-2 shadow-sm border border-gray-200"
+            >
+                <svg
+                    class="w-5 text-gray-500 h-5 cursor-pointer"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                 >
-                    <svg
-                        class="w-5 text-gray-500 h-5 cursor-pointer"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <path
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    ></path>
+                </svg>
+                <input
+                    type="text"
+                    v-model="search"
+                    name=""
+                    id=""
+                    placeholder="Поиск по логину, модели или полной модели (все сервисы)"
+                    class="w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
+                />
+            </div>
+            <div class="mb-2 ml-3" v-if="checked.length">
+                <Menu as="div" class="relative inline-block text-left">
+                    <div>
+                        <MenuButton
+                            class="px-4 py-2 inline-flex items-center text-base leading-5 font-semibold rounded-lg text-white bg-gray-700"
+                        >
+                            С отмеченными ({{ checked.length }}):
+                            <ChevronDownIcon
+                                class="w-5 h-5 ml-2 -mr-1"
+                                aria-hidden="true"
+                            />
+                        </MenuButton>
+                    </div>
+                    <transition
+                        enter-active-class="transition duration-100 ease-out"
+                        enter-from-class="transform scale-95 opacity-0"
+                        enter-to-class="transform scale-100 opacity-100"
+                        leave-active-class="transition duration-75 ease-in"
+                        leave-from-class="transform scale-100 opacity-100"
+                        leave-to-class="transform scale-95 opacity-0"
                     >
-                        <path
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        ></path>
-                    </svg>
-                    <input
-                        type="text"
-                        v-model="search"
-                        name=""
-                        id=""
-                        placeholder="Поиск по логину, модели или полной модели (все сервисы)"
-                        class="w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
-                    />
-                </div>
-                <div class="mb-2 ml-3" v-if="checked.length">
-                    <Menu as="div" class="relative inline-block text-left">
-                        <div>
-                            <MenuButton
-                                class="px-4 py-2 inline-flex items-center text-base leading-5 font-semibold rounded-lg text-white bg-gray-700"
-                            >
-                                С отмеченными ({{ checked.length }}):
-                                <ChevronDownIcon
-                                    class="w-5 h-5 ml-2 -mr-1"
-                                    aria-hidden="true"
-                                />
-                            </MenuButton>
-                        </div>
-                        <transition
-                            enter-active-class="transition duration-100 ease-out"
-                            enter-from-class="transform scale-95 opacity-0"
-                            enter-to-class="transform scale-100 opacity-100"
-                            leave-active-class="transition duration-75 ease-in"
-                            leave-from-class="transform scale-100 opacity-100"
-                            leave-to-class="transform scale-95 opacity-0"
+                        <MenuItems
+                            class="absolute z-10 left-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                         >
-                            <MenuItems
-                                class="absolute z-10 left-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            >
-                                <div class="px-1 py-1">
-                                    <MenuItem v-if="!selectPage">
-                                        <a
-                                            href="#"
-                                            onclick="confirm('Удалить выбранные заказы?') || event.stopImmediatePropagation()"
-                                            status_id="1"
-                                            @click.prevent="deleteOrders"
-                                            class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                            >
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                            <span>Удалить</span></a
+                            <div class="px-1 py-1">
+                                <MenuItem v-if="!selectPage">
+                                    <a
+                                        href="#"
+                                        onclick="confirm('Удалить выбранные заказы?') || event.stopImmediatePropagation()"
+                                        status_id="1"
+                                        @click.prevent="deleteOrders"
+                                        class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="2"
                                         >
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <a
-                                            :href="url"
-                                            status_id="2"
-                                            class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                            >
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                            </svg>
-                                            <span>Экспортировать</span></a
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                            />
+                                        </svg>
+                                        <span>Удалить</span></a
+                                    >
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        :href="url"
+                                        status_id="2"
+                                        class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="2"
                                         >
-                                    </MenuItem>
-                                </div>
-                            </MenuItems>
-                        </transition>
-                    </Menu>
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                            />
+                                        </svg>
+                                        <span>Экспортировать</span></a
+                                    >
+                                </MenuItem>
+                            </div>
+                        </MenuItems>
+                    </transition>
+                </Menu>
+            </div>
+            <div v-if="selectPage">
+                <div class="mb-2" v-if="selectAll">
+                    {{
+                        declOfNum(checked.length, [
+                            "Выбран",
+                            "Выбрано",
+                            "Выбрано",
+                        ])
+                    }}
+                    <strong>{{ checked.length }}</strong>
+                    {{
+                        declOfNum(checked.length, [
+                            "заказ",
+                            "заказа",
+                            "заказов",
+                        ])
+                    }}
+                    (это все, что есть...).
                 </div>
-                <div v-if="selectPage">
-                    <div class="mb-2" v-if="selectAll">
-                        {{
-                            declOfNum(checked.length, [
-                                "Выбран",
-                                "Выбрано",
-                                "Выбрано",
-                            ])
-                        }}
-                        <strong>{{ checked.length }}</strong>
-                        {{
-                            declOfNum(checked.length, [
-                                "заказ",
-                                "заказа",
-                                "заказов",
-                            ])
-                        }}
-                        (это все, что есть...).
-                    </div>
-                    <div class="mb-2" v-else>
-                        {{
-                            declOfNum(checked.length, [
-                                "Выбран",
-                                "Выбрано",
-                                "Выбрано",
-                            ])
-                        }}
-                        <strong>{{ checked.length }}</strong>
-                        {{
-                            declOfNum(checked.length, [
-                                "заказ",
-                                "заказа",
-                                "заказов",
-                            ])
-                        }}. Выбрать все <strong>{{ ordersData.total }}</strong
-                        >?
-                        <a
-                            href="#"
-                            @click.prevent="selectAllOrders"
-                            class="text-blue-600 hover:underline hover:text-blue-700"
-                            >Выбрать</a
-                        >
-                    </div>
+                <div class="mb-2" v-else>
+                    {{
+                        declOfNum(checked.length, [
+                            "Выбран",
+                            "Выбрано",
+                            "Выбрано",
+                        ])
+                    }}
+                    <strong>{{ checked.length }}</strong>
+                    {{
+                        declOfNum(checked.length, [
+                            "заказ",
+                            "заказа",
+                            "заказов",
+                        ])
+                    }}. Выбрать все <strong>{{ ordersData.total }}</strong
+                    >?
+                    <a
+                        href="#"
+                        @click.prevent="selectAllOrders"
+                        class="text-blue-600 hover:underline hover:text-blue-700"
+                        >Выбрать</a
+                    >
                 </div>
+            </div>
             <div class="flex justify-end items-center mb-2 ml-auto space-x-5">
                 <label
                     for="services"
@@ -241,7 +287,7 @@
                     :key="order.id"
                 >
                     <td
-                         v-if="selectedService == userService || is_admin"
+                        v-if="selectedService == userService || is_admin"
                         class="px-2 w-12 py-2 font-medium text-sm whitespace-no-wrap border-b border-gray-200"
                     >
                         <input
@@ -254,8 +300,14 @@
                     <td
                         class="px-2 w-20 py-2 font-medium text-sm whitespace-no-wrap border-b border-gray-200"
                     >
-                        <a href="#" class="text-blue-600 hover:underline" @click.prevent="openEdit(order.id)">
-                         {{ order.services.service_code }}-{{ leadingZeros(order.id) }}
+                        <a
+                            href="#"
+                            class="text-blue-600 hover:underline"
+                            @click.prevent="openEdit(order.id)"
+                        >
+                            {{ order.services.service_code }}-{{
+                                leadingZeros(order.id)
+                            }}
                         </a>
                     </td>
 
@@ -498,15 +550,18 @@ export default {
             search: "",
             order_id: "",
             services: {},
-            selectedService: window.Laravel.user.is_admin == 1? 'all' : window.Laravel.user.service_id,
+            selectedService:
+                window.Laravel.user.is_admin == 1
+                    ? "all"
+                    : window.Laravel.user.service_id,
             userService: window.Laravel.user.service_id,
-            is_admin: window.Laravel.user.is_admin == 1? true : false,
+            is_admin: window.Laravel.user.is_admin == 1 ? true : false,
             s_id: "",
             checked: [],
             selectPage: false,
             selectAll: false,
             url: "",
-            showOnlyOpen: false
+            showOnlyOpen: false,
         };
     },
     components: {
@@ -530,7 +585,7 @@ export default {
         search: function (value) {
             this.getOrders();
         },
-        showOnlyOpen: function(value) {
+        showOnlyOpen: function (value) {
             this.getOrders();
         },
         selectedService: function (value) {
@@ -606,7 +661,7 @@ export default {
                 });
         },
         isOnlyOpen(data) {
-            this.showOnlyOpen = data
+            this.showOnlyOpen = data;
         },
         dateFormat: function (value) {
             if (value) {
@@ -629,7 +684,7 @@ export default {
             ];
         },
         leadingZeros(number) {
-            return number.toString().padStart(5, '0')
+            return number.toString().padStart(5, "0");
         },
     },
 };
