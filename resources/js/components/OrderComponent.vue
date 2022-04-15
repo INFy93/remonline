@@ -4,7 +4,7 @@
             <div>
                 <button-component @add-event="getOrders"></button-component>
             </div>
-                 <open-orders-component ref="open"></open-orders-component>
+                 <open-orders-component ref="open" @showOpen="isOnlyOpen"></open-orders-component>
         </div>
         <edit-order-component
             @edit-event="getOrders"
@@ -506,6 +506,7 @@ export default {
             selectPage: false,
             selectAll: false,
             url: "",
+            showOnlyOpen: false
         };
     },
     components: {
@@ -527,6 +528,9 @@ export default {
     },
     watch: {
         search: function (value) {
+            this.getOrders();
+        },
+        showOnlyOpen: function(value) {
             this.getOrders();
         },
         selectedService: function (value) {
@@ -570,7 +574,9 @@ export default {
                         "&search=" +
                         this.search +
                         "&selectedService=" +
-                        this.selectedService
+                        this.selectedService +
+                        "&openOrders=" +
+                        this.showOnlyOpen
                 )
                 .then((response) => {
                     this.ordersData = response.data;
@@ -598,6 +604,9 @@ export default {
                     this.$refs.open.getOpenOrders();
                     this.getOrders(1);
                 });
+        },
+        isOnlyOpen(data) {
+            this.showOnlyOpen = data
         },
         dateFormat: function (value) {
             if (value) {
