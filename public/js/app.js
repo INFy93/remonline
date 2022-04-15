@@ -25039,6 +25039,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     addModel: function addModel(event) {
       this.new_order.model = event.target.innerHTML;
+    },
+    addProduct: function addProduct(event) {
+      this.new_order.product = event.target.innerHTML;
     }
   }
 });
@@ -26427,7 +26430,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "flex justify-end"
+  "class": "flex justify-end items-center ml-auto"
 };
 var _hoisted_2 = {
   "class": "wrapper w-36 bg-gray-700 rounded-lg"
@@ -26585,122 +26588,125 @@ var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_24 = {
+  "class": "flex space-x-2"
+};
+var _hoisted_25 = {
   key: 0,
   "class": "text-sm text-red-500"
 };
-var _hoisted_25 = {
+var _hoisted_26 = {
   "class": "mb-6"
 };
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "model",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Бренд*", -1
 /* HOISTED */
 );
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm font-medium"
 }, "ПК", -1
 /* HOISTED */
 );
 
-var _hoisted_28 = {
+var _hoisted_29 = {
   "class": "flex space-x-2"
 };
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm font-medium"
 }, "Ноутбуки", -1
 /* HOISTED */
 );
 
-var _hoisted_30 = {
+var _hoisted_31 = {
   "class": "flex space-x-2"
 };
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm font-medium"
 }, "Роутеры", -1
 /* HOISTED */
 );
 
-var _hoisted_32 = {
+var _hoisted_33 = {
   "class": "flex space-x-2"
 };
-var _hoisted_33 = {
+var _hoisted_34 = {
   key: 0,
   "class": "text-sm text-red-500"
 };
-var _hoisted_34 = {
+var _hoisted_35 = {
   "class": "mb-6"
 };
 
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "model_full_name",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Модель", -1
 /* HOISTED */
 );
 
-var _hoisted_36 = {
+var _hoisted_37 = {
   "class": "mb-6"
 };
 
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "malfunction",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Неисправность*", -1
 /* HOISTED */
 );
 
-var _hoisted_38 = {
+var _hoisted_39 = {
   "class": "flex space-x-2"
 };
-var _hoisted_39 = {
+var _hoisted_40 = {
   key: 0,
   "class": "text-sm text-red-500"
 };
-var _hoisted_40 = {
+var _hoisted_41 = {
   "class": "mb-6"
 };
 
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "appearance",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Внешний вид", -1
 /* HOISTED */
 );
 
-var _hoisted_42 = {
+var _hoisted_43 = {
   "class": "mb-6"
 };
 
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "product_complection",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Комплектация", -1
 /* HOISTED */
 );
 
-var _hoisted_44 = {
-  "class": "flex space-x-2"
-};
 var _hoisted_45 = {
   "class": "flex space-x-2"
 };
 var _hoisted_46 = {
+  "class": "flex space-x-2"
+};
+var _hoisted_47 = {
   "class": "mb-6"
 };
 
-var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "marks",
   "class": "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 }, "Заметки", -1
 /* HOISTED */
 );
 
-var _hoisted_48 = {
+var _hoisted_49 = {
   "class": "mt-4 flex space-x-4 float-right"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -26853,9 +26859,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Телефон"
               }, null, 2
               /* CLASS */
-              ), [[_directive_maska, '+7 (###) ###-##-##'], [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.client_phone.$model]]), $setup.val.new_order.client_phone.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, "Необходимо ввести телефон.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+              ), [[_directive_maska, '+7 (###) ###-##-##'], [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.client_phone.$model]]), $setup.val.new_order.client_phone.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, "Необходимо ввести телефон.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[5] || (_cache[5] = function () {
+                  return $options.addProduct && $options.addProduct.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "ПК"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[6] || (_cache[6] = function () {
+                  return $options.addProduct && $options.addProduct.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноутбук"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[7] || (_cache[7] = function () {
+                  return $options.addProduct && $options.addProduct.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Роутер"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[8] || (_cache[8] = function () {
+                  return $options.addProduct && $options.addProduct.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Приставка")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+                "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
                   return $setup.val.new_order.product.$model = $event;
                 }),
                 id: "product",
@@ -26865,87 +26895,99 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "ПК, нотубук, роутер..."
               }, null, 2
               /* CLASS */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.product.$model]]), $setup.val.new_order.product.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_24, "Необходимо ввести тип устройства.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[6] || (_cache[6] = function () {
-                  return $options.addModel && $options.addModel.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Черный сис"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[7] || (_cache[7] = function () {
-                  return $options.addModel && $options.addModel.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Белый сис")]), _hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[8] || (_cache[8] = function () {
-                  return $options.addModel && $options.addModel.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Asus"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[9] || (_cache[9] = function () {
-                  return $options.addModel && $options.addModel.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Acer"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.product.$model]]), $setup.val.new_order.product.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_25, "Необходимо ввести тип устройства.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[10] || (_cache[10] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Lenovo"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Черный сис"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[11] || (_cache[11] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "HP"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Белый сис")]), _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[12] || (_cache[12] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "MSI")]), _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Asus"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[13] || (_cache[13] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "TP-LINK"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Acer"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[14] || (_cache[14] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Mercusys"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Lenovo"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[15] || (_cache[15] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Mikrotik"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "HP"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[16] || (_cache[16] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Zyxel"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "MSI")]), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[17] || (_cache[17] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "D-Link"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "TP-LINK"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[18] || (_cache[18] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
+              }, "Mikrotik"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[19] || (_cache[19] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Mercusys"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[20] || (_cache[20] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Xiaomi"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[21] || (_cache[21] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Asus"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[22] || (_cache[22] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Zyxel"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[23] || (_cache[23] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "D-Link"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[24] || (_cache[24] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
               }, "Huawei")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
+                "onUpdate:modelValue": _cache[25] || (_cache[25] = function ($event) {
                   return $setup.val.new_order.model.$model = $event;
                 }),
                 id: "model",
@@ -26955,9 +26997,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Asus, Acer, черный/белый/.. сис"
               }, null, 2
               /* CLASS */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.model.$model]]), $setup.val.new_order.model.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_33, "Необходимо ввести модель.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [_hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.model.$model]]), $setup.val.new_order.model.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_34, "Необходимо ввести модель.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[20] || (_cache[20] = function ($event) {
+                "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
                   return _ctx.new_order.model_full_name = $event;
                 }),
                 id: "model_full_name",
@@ -26965,38 +27007,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "B500, RB950Ui..."
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.model_full_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [_hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.model_full_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[21] || (_cache[21] = function () {
+                onClick: _cache[27] || (_cache[27] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Перенастройка ОС"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[22] || (_cache[22] = function () {
+                onClick: _cache[28] || (_cache[28] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Черный экран"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[23] || (_cache[23] = function () {
+                onClick: _cache[29] || (_cache[29] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Не включается"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[24] || (_cache[24] = function () {
+                onClick: _cache[30] || (_cache[30] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Не загружается"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[25] || (_cache[25] = function () {
+                onClick: _cache[31] || (_cache[31] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "(Пере)-настройка роутера")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
+              }, "Настройка")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+                "onUpdate:modelValue": _cache[32] || (_cache[32] = function ($event) {
                   return $setup.val.new_order.malfunction.$model = $event;
                 }),
                 id: "malfunction",
@@ -27007,65 +27049,65 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Перенастройка ОС и так далее..."
               }, null, 2
               /* CLASS */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.malfunction.$model]]), $setup.val.new_order.malfunction.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_39, "Необходимо ввести что с устройством случилось.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.malfunction.$model]]), $setup.val.new_order.malfunction.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_40, "Необходимо ввести что с устройством случилось.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[27] || (_cache[27] = function ($event) {
+                "onUpdate:modelValue": _cache[33] || (_cache[33] = function ($event) {
                   return _ctx.new_order.appearance = $event;
                 }),
                 id: "appearance",
                 "class": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.appearance]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [_hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[28] || (_cache[28] = function () {
-                  return $options.addComplection && $options.addComplection.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Роутер + бп"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[29] || (_cache[29] = function () {
-                  return $options.addComplection && $options.addComplection.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Роутер без бп"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[30] || (_cache[30] = function () {
-                  return $options.addComplection && $options.addComplection.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Роутер новый, в коробке")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[31] || (_cache[31] = function () {
-                  return $options.addComplection && $options.addComplection.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Ноут + зарядка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[32] || (_cache[32] = function () {
-                  return $options.addComplection && $options.addComplection.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Ноут + зарядка + сумка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-                href: "#",
-                onClick: _cache[33] || (_cache[33] = function () {
-                  return $options.addComplection && $options.addComplection.apply($options, arguments);
-                }),
-                "class": "text-sm text-blue-600 hover:underline"
-              }, "Ноут без зарядки"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.appearance]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [_hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[34] || (_cache[34] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Полная"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Роутер + бп"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[35] || (_cache[35] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
+              }, "Роутер без бп"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[36] || (_cache[36] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Роутер новый, в коробке")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[37] || (_cache[37] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноут + зарядка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[38] || (_cache[38] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноут + зарядка + сумка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[39] || (_cache[39] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Ноут без зарядки"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[40] || (_cache[40] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "Полная"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[41] || (_cache[41] = function () {
+                  return $options.addComplection && $options.addComplection.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
               }, "Со шнуром")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[36] || (_cache[36] = function ($event) {
+                "onUpdate:modelValue": _cache[42] || (_cache[42] = function ($event) {
                   return _ctx.new_order.product_complection = $event;
                 }),
                 id: "product_complection",
@@ -27074,8 +27116,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Ноут + зарядка и тд..."
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.product_complection]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[37] || (_cache[37] = function ($event) {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.product_complection]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+                "onUpdate:modelValue": _cache[43] || (_cache[43] = function ($event) {
                   return _ctx.new_order.marks = $event;
                 }),
                 id: "marks",
@@ -27084,16 +27126,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 placeholder: "Какую ОС ставить или комменты о клиенте :)"
               }, null, 512
               /* NEED_PATCH */
-              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.marks]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+              ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.marks]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-items-end px-4 py-2 text-sm font-medium text-blue-900 bg-red-300 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[38] || (_cache[38] = function () {
+                onClick: _cache[44] || (_cache[44] = function () {
                   return $setup.closeModal && $setup.closeModal.apply($setup, arguments);
                 })
               }, " Закрыть "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[39] || (_cache[39] = function () {
+                onClick: _cache[45] || (_cache[45] = function () {
                   return $options.addOrder && $options.addOrder.apply($options, arguments);
                 })
               }, " Добавить ")])])];
@@ -27134,36 +27176,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mb-5 mt-3 flex flex-row"
+  "class": "mb-5 mt-3 flex flex-row items-center"
 };
 var _hoisted_2 = {
-  "class": "flex justify-end items-center ml-auto space-x-5"
+  "class": "flex flex-row items-center"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "services",
-  "class": "block text-m font-medium text-gray-900 dark:text-gray-400"
-}, "Сервис", -1
-/* HOISTED */
-);
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "all",
-  "class": "border-b border-gray-400"
-}, " Все сервисы ", -1
-/* HOISTED */
-);
-
-var _hoisted_5 = ["value", "selected"];
-var _hoisted_6 = {
-  "class": "flex items-center space-x-3"
-};
-var _hoisted_7 = {
+var _hoisted_3 = {
   key: 0,
   "class": "bg-white rounded right-0 flex items-center w-full max-w-xl h-10 mb-2 p-2 shadow-sm border border-gray-200"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "w-5 text-gray-500 h-5 cursor-pointer",
   fill: "none",
   "stroke-linecap": "round",
@@ -27177,15 +27200,15 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_9 = {
+var _hoisted_5 = {
   key: 1,
-  "class": "mb-2"
+  "class": "mb-2 ml-3"
 };
-var _hoisted_10 = {
+var _hoisted_6 = {
   "class": "px-1 py-1"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-5 w-5",
   fill: "none",
@@ -27200,14 +27223,14 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Удалить", -1
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Удалить", -1
 /* HOISTED */
 );
 
-var _hoisted_13 = [_hoisted_11, _hoisted_12];
-var _hoisted_14 = ["href"];
+var _hoisted_9 = [_hoisted_7, _hoisted_8];
+var _hoisted_10 = ["href"];
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-5 w-5",
   fill: "none",
@@ -27222,25 +27245,44 @@ var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Экспортировать", -1
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Экспортировать", -1
 /* HOISTED */
 );
 
-var _hoisted_17 = [_hoisted_15, _hoisted_16];
-var _hoisted_18 = {
+var _hoisted_13 = [_hoisted_11, _hoisted_12];
+var _hoisted_14 = {
   key: 2
 };
-var _hoisted_19 = {
+var _hoisted_15 = {
   key: 0,
   "class": "mb-2"
 };
-var _hoisted_20 = {
+var _hoisted_16 = {
   key: 1,
   "class": "mb-2"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("? ");
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("? ");
 
+var _hoisted_18 = {
+  "class": "flex justify-end items-center mb-2 ml-auto space-x-5"
+};
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "services",
+  "class": "block text-m font-medium text-gray-900 dark:text-gray-400"
+}, "Сервис", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "all",
+  "class": "border-b border-gray-400"
+}, " Все сервисы ", -1
+/* HOISTED */
+);
+
+var _hoisted_21 = ["value", "selected"];
 var _hoisted_22 = {
   key: 0
 };
@@ -27425,9 +27467,9 @@ var _hoisted_75 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_open_orders_component = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("open-orders-component");
-
   var _component_button_component = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("button-component");
+
+  var _component_open_orders_component = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("open-orders-component");
 
   var _component_edit_order_component = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("edit-order-component");
 
@@ -27443,40 +27485,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Pagination = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Pagination");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_open_orders_component, {
-    ref: "open"
-  }, null, 512
-  /* NEED_PATCH */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_component, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_component, {
     onAddEvent: $options.getOrders
   }, null, 8
   /* PROPS */
-  , ["onAddEvent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-    id: "services",
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.selectedService = $event;
-    }),
-    "class": "h-10 w-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  }, [_hoisted_4, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.services, function (service) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
-      key: service.id,
-      value: service.id,
-      selected: service.id == _ctx.selectedService
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.service_name), 9
-    /* TEXT, PROPS */
-    , _hoisted_5);
-  }), 128
-  /* KEYED_FRAGMENT */
-  ))], 512
+  , ["onAddEvent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_open_orders_component, {
+    ref: "open"
+  }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, _ctx.selectedService]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_edit_order_component, {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_edit_order_component, {
     onEditEvent: $options.getOrders,
     ref: "openEditPopup"
   }, null, 8
   /* PROPS */
-  , ["onEditEvent"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_ctx.ordersData.data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  , ["onEditEvent"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_ctx.ordersData.data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return _ctx.search = $event;
     }),
     name: "",
@@ -27485,7 +27509,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.search]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.checked.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Menu, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.search]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.checked.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Menu, {
     as: "div",
     "class": "relative inline-block text-left"
   }, {
@@ -27517,7 +27541,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             "class": "absolute z-10 left-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [!_ctx.selectPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MenuItem, {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [!_ctx.selectPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MenuItem, {
                 key: 0
               }, {
                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -27525,11 +27549,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                     href: "#",
                     onclick: "confirm('Удалить выбранные заказы?') || event.stopImmediatePropagation()",
                     status_id: "1",
-                    onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+                    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
                       return $options.deleteOrders && $options.deleteOrders.apply($options, arguments);
                     }, ["prevent"])),
                     "class": "flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  }, _hoisted_13)];
+                  }, _hoisted_9)];
                 }),
                 _: 1
                 /* STABLE */
@@ -27540,9 +27564,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                     href: _ctx.url,
                     status_id: "2",
                     "class": "flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  }, _hoisted_17, 8
+                  }, _hoisted_13, 8
                   /* PROPS */
-                  , _hoisted_14)];
+                  , _hoisted_10)];
                 }),
                 _: 1
                 /* STABLE */
@@ -27562,13 +27586,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.selectPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [_ctx.selectAll ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.declOfNum(_ctx.checked.length, ["Выбран", "Выбрано", "Выбрано"])) + " ", 1
+  })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.selectPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [_ctx.selectAll ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.declOfNum(_ctx.checked.length, ["Выбран", "Выбрано", "Выбрано"])) + " ", 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.checked.length), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.declOfNum(_ctx.checked.length, ["заказ", "заказа", "заказов"])) + " (это все, что есть...). ", 1
   /* TEXT */
-  )])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.declOfNum(_ctx.checked.length, ["Выбран", "Выбрано", "Выбрано"])) + " ", 1
+  )])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.declOfNum(_ctx.checked.length, ["Выбран", "Выбрано", "Выбрано"])) + " ", 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.checked.length), 1
   /* TEXT */
@@ -27576,13 +27600,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.ordersData.total), 1
   /* TEXT */
-  ), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  ), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: "#",
-    onClick: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.selectAllOrders && $options.selectAllOrders.apply($options, arguments);
     }, ["prevent"])),
     "class": "text-blue-600 hover:underline hover:text-blue-700"
-  }, "Выбрать")]))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), !_ctx.ordersData ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_22, _hoisted_24)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !_ctx.ordersData.data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_25, _hoisted_27)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("table", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [_ctx.selectedService == _ctx.userService || _ctx.is_admin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("th", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, "Выбрать")]))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    id: "services",
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return _ctx.selectedService = $event;
+    }),
+    "class": "h-10 w-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+  }, [_hoisted_20, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.services, function (service) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: service.id,
+      value: service.id,
+      selected: service.id == _ctx.selectedService
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.service_name), 9
+    /* TEXT, PROPS */
+    , _hoisted_21);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))], 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, _ctx.selectedService]])])]), !_ctx.ordersData ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_22, _hoisted_24)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !_ctx.ordersData.data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_25, _hoisted_27)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("table", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [_ctx.selectedService == _ctx.userService || _ctx.is_admin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("th", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "checkbox",
     name: "",
     id: "",

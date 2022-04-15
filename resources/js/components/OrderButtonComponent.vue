@@ -140,6 +140,12 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                             >Тип устройства*</label
                                         >
+                                        <div class="flex space-x-2">
+                                                    <a href="#" @click="addProduct" class="text-sm text-blue-600 hover:underline">ПК</a>
+                                                    <a href="#" @click="addProduct" class="text-sm text-blue-600 hover:underline">Ноутбук</a>
+                                                    <a href="#" @click="addProduct" class="text-sm text-blue-600 hover:underline">Роутер</a>
+                                                    <a href="#" @click="addProduct" class="text-sm text-blue-600 hover:underline">Приставка</a>
+                                        </div>
                                         <input
                                             type="text"
                                             v-model="val.new_order.product.$model"
@@ -172,8 +178,10 @@
                                         <span class="text-sm font-medium">Роутеры</span>
                                         <div class="flex space-x-2">
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">TP-LINK</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mercusys</a>
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mikrotik</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mercusys</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Xiaomi</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Asus</a>
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Zyxel</a>
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">D-Link</a>
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Huawei</a>
@@ -213,7 +221,7 @@
                                                     <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Черный экран</a>
                                                     <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Не включается</a>
                                                     <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Не загружается</a>
-                                                    <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">(Пере)-настройка роутера</a>
+                                                    <a href="#" @click="addMalfunction" class="text-sm text-blue-600 hover:underline">Настройка</a>
                                         </div>
                                         <textarea
                                             v-model="val.new_order.malfunction.$model"
@@ -427,6 +435,9 @@ export default {
         },
         addModel(event) {
             this.new_order.model = event.target.innerHTML
+        },
+        addProduct(event) {
+            this.new_order.product = event.target.innerHTML
         },
     },
 };

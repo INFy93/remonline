@@ -1,11 +1,143 @@
 <template>
     <div>
-        <open-orders-component ref="open"></open-orders-component>
-        <div class="mb-5 mt-3 flex flex-row">
+        <div class="mb-5 mt-3 flex flex-row items-center">
             <div>
                 <button-component @add-event="getOrders"></button-component>
             </div>
-            <div class="flex justify-end items-center ml-auto space-x-5">
+                 <open-orders-component ref="open"></open-orders-component>
+        </div>
+        <edit-order-component
+            @edit-event="getOrders"
+            ref="openEditPopup"
+        ></edit-order-component>
+        <div class="flex flex-row items-center">
+                <div
+                    v-if="ordersData.data"
+                    class="bg-white rounded right-0 flex items-center w-full max-w-xl h-10 mb-2 p-2 shadow-sm border border-gray-200"
+                >
+                    <svg
+                        class="w-5 text-gray-500 h-5 cursor-pointer"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        ></path>
+                    </svg>
+                    <input
+                        type="text"
+                        v-model="search"
+                        name=""
+                        id=""
+                        placeholder="Поиск по логину, модели или полной модели (все сервисы)"
+                        class="w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
+                    />
+                </div>
+                <div class="mb-2 ml-3" v-if="checked.length">
+                    <Menu as="div" class="relative inline-block text-left">
+                        <div>
+                            <MenuButton
+                                class="px-4 py-2 inline-flex items-center text-base leading-5 font-semibold rounded-lg text-white bg-gray-700"
+                            >
+                                С отмеченными ({{ checked.length }}):
+                                <ChevronDownIcon
+                                    class="w-5 h-5 ml-2 -mr-1"
+                                    aria-hidden="true"
+                                />
+                            </MenuButton>
+                        </div>
+                        <transition
+                            enter-active-class="transition duration-100 ease-out"
+                            enter-from-class="transform scale-95 opacity-0"
+                            enter-to-class="transform scale-100 opacity-100"
+                            leave-active-class="transition duration-75 ease-in"
+                            leave-from-class="transform scale-100 opacity-100"
+                            leave-to-class="transform scale-95 opacity-0"
+                        >
+                            <MenuItems
+                                class="absolute z-10 left-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            >
+                                <div class="px-1 py-1">
+                                    <MenuItem v-if="!selectPage">
+                                        <a
+                                            href="#"
+                                            onclick="confirm('Удалить выбранные заказы?') || event.stopImmediatePropagation()"
+                                            status_id="1"
+                                            @click.prevent="deleteOrders"
+                                            class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                            >
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg>
+                                            <span>Удалить</span></a
+                                        >
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <a
+                                            :href="url"
+                                            status_id="2"
+                                            class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                            >
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                            </svg>
+                                            <span>Экспортировать</span></a
+                                        >
+                                    </MenuItem>
+                                </div>
+                            </MenuItems>
+                        </transition>
+                    </Menu>
+                </div>
+                <div v-if="selectPage">
+                    <div class="mb-2" v-if="selectAll">
+                        {{
+                            declOfNum(checked.length, [
+                                "Выбран",
+                                "Выбрано",
+                                "Выбрано",
+                            ])
+                        }}
+                        <strong>{{ checked.length }}</strong>
+                        {{
+                            declOfNum(checked.length, [
+                                "заказ",
+                                "заказа",
+                                "заказов",
+                            ])
+                        }}
+                        (это все, что есть...).
+                    </div>
+                    <div class="mb-2" v-else>
+                        {{
+                            declOfNum(checked.length, [
+                                "Выбран",
+                                "Выбрано",
+                                "Выбрано",
+                            ])
+                        }}
+                        <strong>{{ checked.length }}</strong>
+                        {{
+                            declOfNum(checked.length, [
+                                "заказ",
+                                "заказа",
+                                "заказов",
+                            ])
+                        }}. Выбрать все <strong>{{ ordersData.total }}</strong
+                        >?
+                        <a
+                            href="#"
+                            @click.prevent="selectAllOrders"
+                            class="text-blue-600 hover:underline hover:text-blue-700"
+                            >Выбрать</a
+                        >
+                    </div>
+                </div>
+            <div class="flex justify-end items-center mb-2 ml-auto space-x-5">
                 <label
                     for="services"
                     class="block text-m font-medium text-gray-900 dark:text-gray-400"
@@ -28,138 +160,6 @@
                         {{ service.service_name }}
                     </option>
                 </select>
-            </div>
-        </div>
-        <edit-order-component
-            @edit-event="getOrders"
-            ref="openEditPopup"
-        ></edit-order-component>
-        <div class="flex items-center space-x-3">
-            <div
-                v-if="ordersData.data"
-                class="bg-white rounded right-0 flex items-center w-full max-w-xl h-10 mb-2 p-2 shadow-sm border border-gray-200"
-            >
-                <svg
-                    class="w-5 text-gray-500 h-5 cursor-pointer"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    ></path>
-                </svg>
-                <input
-                    type="text"
-                    v-model="search"
-                    name=""
-                    id=""
-                    placeholder="Поиск по логину, модели или полной модели (все сервисы)"
-                    class="w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
-                />
-            </div>
-            <div class="mb-2" v-if="checked.length">
-                <Menu as="div" class="relative inline-block text-left">
-                    <div>
-                        <MenuButton
-                            class="px-4 py-2 inline-flex items-center text-base leading-5 font-semibold rounded-lg text-white bg-gray-700"
-                        >
-                            С отмеченными ({{ checked.length }}):
-                            <ChevronDownIcon
-                                class="w-5 h-5 ml-2 -mr-1"
-                                aria-hidden="true"
-                            />
-                        </MenuButton>
-                    </div>
-                    <transition
-                        enter-active-class="transition duration-100 ease-out"
-                        enter-from-class="transform scale-95 opacity-0"
-                        enter-to-class="transform scale-100 opacity-100"
-                        leave-active-class="transition duration-75 ease-in"
-                        leave-from-class="transform scale-100 opacity-100"
-                        leave-to-class="transform scale-95 opacity-0"
-                    >
-                        <MenuItems
-                            class="absolute z-10 left-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                        >
-                            <div class="px-1 py-1">
-                                <MenuItem v-if="!selectPage">
-                                    <a
-                                        href="#"
-                                        onclick="confirm('Удалить выбранные заказы?') || event.stopImmediatePropagation()"
-                                        status_id="1"
-                                        @click.prevent="deleteOrders"
-                                        class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                        >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                        </svg>
-                                        <span>Удалить</span></a
-                                    >
-                                </MenuItem>
-                                <MenuItem>
-                                    <a
-                                        :href="url"
-                                        status_id="2"
-                                        class="flex space-x-1 py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                        >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                        </svg>
-                                        <span>Экспортировать</span></a
-                                    >
-                                </MenuItem>
-                            </div>
-                        </MenuItems>
-                    </transition>
-                </Menu>
-            </div>
-            <div v-if="selectPage">
-                <div class="mb-2" v-if="selectAll">
-                    {{
-                        declOfNum(checked.length, [
-                            "Выбран",
-                            "Выбрано",
-                            "Выбрано",
-                        ])
-                    }}
-                    <strong>{{ checked.length }}</strong>
-                    {{
-                        declOfNum(checked.length, [
-                            "заказ",
-                            "заказа",
-                            "заказов",
-                        ])
-                    }}
-                    (это все, что есть...).
-                </div>
-                <div class="mb-2" v-else>
-                    {{
-                        declOfNum(checked.length, [
-                            "Выбран",
-                            "Выбрано",
-                            "Выбрано",
-                        ])
-                    }}
-                    <strong>{{ checked.length }}</strong>
-                    {{
-                        declOfNum(checked.length, [
-                            "заказ",
-                            "заказа",
-                            "заказов",
-                        ])
-                    }}. Выбрать все <strong>{{ ordersData.total }}</strong
-                    >?
-                    <a
-                        href="#"
-                        @click.prevent="selectAllOrders"
-                        class="text-blue-600 hover:underline hover:text-blue-700"
-                        >Выбрать</a
-                    >
-                </div>
             </div>
         </div>
 
