@@ -14,6 +14,7 @@
             ref="openEditPopup"
         ></edit-order-component>
         <div
+            v-if="showOnlyOpen"
             class="flex p-2 mb-4 w-1/3 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
             role="alert"
         >
@@ -30,7 +31,7 @@
                 ></path>
             </svg>
             <div>
-                <span class="font-medium">Внимание!</span> Включено отображение
+                Включено отображение
                 только текущих заказов.
             </div>
         </div>

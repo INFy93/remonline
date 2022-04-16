@@ -21,7 +21,7 @@ class OrdersController extends Controller
 
         $selected_service = request('selectedService', Auth::user()->service_id);
         $filter = $selected_service == 'all' ? '' : $selected_service;
-        $filter_by_open_orders =  request('openOrders') == 'false' ? false : true;
+        $filter_by_open_orders =  request('openOrders') == 'false' || request('openOrders') == null ? false : true;
 
         $orders = Order::with(['statuses', 'services', 'users'])
         ->when($filter, function($query) use ($filter) {
