@@ -32,7 +32,7 @@
             </svg>
             <div>
                 Включено отображение
-                только текущих заказов.
+                только открытых заказов.
             </div>
         </div>
         <div class="flex flex-row items-center">

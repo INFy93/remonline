@@ -82,7 +82,7 @@
                 </select>
             </div>
         </div>
-        <div class="flex items-center space-x-3">
+        <div class="flex flex-row items-center space-x-3">
             <div
                 v-if="ordersData.data"
                 class="bg-white rounded right-0 flex items-center w-full max-w-xl h-10 mb-2 p-2 shadow-sm border border-gray-200"
@@ -109,6 +109,14 @@
                     class="w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
                 />
             </div>
+            <div class="mb-2 ml-3">
+                    <input
+                            type="checkbox"
+                            v-model="isOpen"
+                            class="rounded focus:outline-none outline-none dark:ring-offset-gray-600 dark:focus:ring-gray-500 border-gray-300 dark:border-gray-600 dark:bg-gray-500 dark:text-gray-400"
+                        />
+                    <span class="ml-2">Только открытые</span>
+                </div>
             <div class="mb-2" v-if="checked.length">
                 <Menu as="div" class="relative inline-block text-left">
                     <div>
@@ -543,10 +551,14 @@ export default {
             selectPage: false,
             selectAll: false,
             url: "",
+            isOpen: false
         };
     },
     watch: {
         search: function (value) {
+            this.getOrders();
+        },
+        isOpen: function(value) {
             this.getOrders();
         },
         selectedService: function (value) {
@@ -610,7 +622,9 @@ export default {
                         "&search=" +
                         this.search +
                         "&selectedService=" +
-                        this.selectedService
+                        this.selectedService +
+                         "&openOrders=" +
+                         this.isOpen
                 )
                 .then((response) => {
                     this.ordersData = response.data;
