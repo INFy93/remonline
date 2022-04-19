@@ -508,7 +508,7 @@
         <div>
             <Pagination
                 :data="ordersData"
-                :limit="5"
+                :limit="4"
                 @pagination-change-page="getOrders"
             >
                 <template #prev-nav>
