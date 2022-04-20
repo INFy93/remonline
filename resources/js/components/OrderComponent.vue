@@ -280,7 +280,9 @@
                 </tr>
             </thead>
 
-            <tbody class="bg-white">
+            <tbody
+            v-if="Object.keys(ordersData.data).length"
+            class="bg-white">
                 <tr
                     class="number hover:bg-gray-200 transition-all duration-400"
                     @dblclick="openEdit(order.id)"
@@ -505,6 +507,13 @@
                                 </div>
                             </div>
                         </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody v-else>
+                <tr>
+                    <td colspan="9">
+                        <span class="text-center text-lg">Нет заказов.</span>
                     </td>
                 </tr>
             </tbody>
