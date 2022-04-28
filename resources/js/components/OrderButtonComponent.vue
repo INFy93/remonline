@@ -175,6 +175,8 @@
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">HP</a>
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">MSI</a>
                                                     <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Samsung</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">eMachines</a>
+                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Гравитон</a>
                                         </div>
                                         <span class="text-sm font-medium">Роутеры</span>
                                         <div class="flex space-x-2">

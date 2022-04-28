@@ -26964,57 +26964,69 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Samsung")]), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Samsung"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[18] || (_cache[18] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "TP-LINK"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "eMachines"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[19] || (_cache[19] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Mikrotik"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Гравитон")]), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[20] || (_cache[20] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Mercusys"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "TP-LINK"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[21] || (_cache[21] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Xiaomi"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Mikrotik"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[22] || (_cache[22] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Asus"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Mercusys"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[23] || (_cache[23] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "Zyxel"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Xiaomi"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[24] || (_cache[24] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
-              }, "D-Link"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+              }, "Asus"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
                 onClick: _cache[25] || (_cache[25] = function () {
                   return $options.addModel && $options.addModel.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
+              }, "Zyxel"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[26] || (_cache[26] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
+              }, "D-Link"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+                href: "#",
+                onClick: _cache[27] || (_cache[27] = function () {
+                  return $options.addModel && $options.addModel.apply($options, arguments);
+                }),
+                "class": "text-sm text-blue-600 hover:underline"
               }, "Huawei")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
+                "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
                   return $setup.val.new_order.model.$model = $event;
                 }),
                 id: "model",
@@ -27026,7 +27038,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               /* CLASS */
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.model.$model]]), $setup.val.new_order.model.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_34, "Необходимо ввести модель.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[27] || (_cache[27] = function ($event) {
+                "onUpdate:modelValue": _cache[29] || (_cache[29] = function ($event) {
                   return _ctx.new_order.model_full_name = $event;
                 }),
                 id: "model_full_name",
@@ -27036,36 +27048,36 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               /* NEED_PATCH */
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.model_full_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[28] || (_cache[28] = function () {
+                onClick: _cache[30] || (_cache[30] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Перенастройка ОС"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[29] || (_cache[29] = function () {
+                onClick: _cache[31] || (_cache[31] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Черный экран"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[30] || (_cache[30] = function () {
+                onClick: _cache[32] || (_cache[32] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Не включается"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[31] || (_cache[31] = function () {
+                onClick: _cache[33] || (_cache[33] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Не загружается"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[32] || (_cache[32] = function () {
+                onClick: _cache[34] || (_cache[34] = function () {
                   return $options.addMalfunction && $options.addMalfunction.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Настройка")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[33] || (_cache[33] = function ($event) {
+                "onUpdate:modelValue": _cache[35] || (_cache[35] = function ($event) {
                   return $setup.val.new_order.malfunction.$model = $event;
                 }),
                 id: "malfunction",
@@ -27078,7 +27090,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               /* CLASS */
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.val.new_order.malfunction.$model]]), $setup.val.new_order.malfunction.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_40, "Необходимо ввести что с устройством случилось.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
                 type: "text",
-                "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
+                "onUpdate:modelValue": _cache[36] || (_cache[36] = function ($event) {
                   return _ctx.new_order.appearance = $event;
                 }),
                 id: "appearance",
@@ -27087,54 +27099,54 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               /* NEED_PATCH */
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.appearance]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [_hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[35] || (_cache[35] = function () {
+                onClick: _cache[37] || (_cache[37] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Роутер + бп"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[36] || (_cache[36] = function () {
+                onClick: _cache[38] || (_cache[38] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Роутер без бп"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[37] || (_cache[37] = function () {
+                onClick: _cache[39] || (_cache[39] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Роутер новый, в коробке")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[38] || (_cache[38] = function () {
+                onClick: _cache[40] || (_cache[40] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Ноут + зарядка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[39] || (_cache[39] = function () {
+                onClick: _cache[41] || (_cache[41] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Ноут + зарядка + сумка"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[40] || (_cache[40] = function () {
+                onClick: _cache[42] || (_cache[42] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Ноут без зарядки"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[41] || (_cache[41] = function () {
+                onClick: _cache[43] || (_cache[43] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Полная"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
                 href: "#",
-                onClick: _cache[42] || (_cache[42] = function () {
+                onClick: _cache[44] || (_cache[44] = function () {
                   return $options.addComplection && $options.addComplection.apply($options, arguments);
                 }),
                 "class": "text-sm text-blue-600 hover:underline"
               }, "Со шнуром")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[43] || (_cache[43] = function ($event) {
+                "onUpdate:modelValue": _cache[45] || (_cache[45] = function ($event) {
                   return _ctx.new_order.product_complection = $event;
                 }),
                 id: "product_complection",
@@ -27144,7 +27156,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 512
               /* NEED_PATCH */
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.product_complection]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-                "onUpdate:modelValue": _cache[44] || (_cache[44] = function ($event) {
+                "onUpdate:modelValue": _cache[46] || (_cache[46] = function ($event) {
                   return _ctx.new_order.marks = $event;
                 }),
                 id: "marks",
@@ -27156,13 +27168,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.new_order.marks]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-items-end px-4 py-2 text-sm font-medium text-blue-900 bg-red-300 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[45] || (_cache[45] = function () {
+                onClick: _cache[47] || (_cache[47] = function () {
                   return $setup.closeModal && $setup.closeModal.apply($setup, arguments);
                 })
               }, " Закрыть "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "class": "inline-flex justify-end px-4 py-2 text-sm font-medium text-blue-900 bg-blue-300 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
-                onClick: _cache[46] || (_cache[46] = function () {
+                onClick: _cache[48] || (_cache[48] = function () {
                   return $options.addOrder && $options.addOrder.apply($options, arguments);
                 })
               }, " Добавить ")])])];
