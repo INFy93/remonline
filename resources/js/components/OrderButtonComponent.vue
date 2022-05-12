@@ -162,33 +162,39 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                             >Бренд*</label
                                         >
-                                        <span class="text-sm font-medium">ПК</span>
-                                         <div class="flex space-x-2">
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Черный сис</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Белый сис</a>
+                                        <div class="flex space-x-1">
+                                            <span class="text-sm font-medium">ПК:</span>
+                                            <div class="flex space-x-2">
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Черный сис</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Белый сис</a>
+                                            </div>
                                          </div>
-                                         <span class="text-sm font-medium">Ноутбуки</span>
-                                        <div class="flex space-x-2">
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Asus</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Acer</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Lenovo</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">HP</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">MSI</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Samsung</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">eMachines</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Гравитон</a>
+                                        <div class="flex space-x-1">
+                                            <span class="text-sm font-medium">Ноутбуки:</span>
+                                            <div class="flex space-x-2">
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Asus</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Acer</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Lenovo</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">HP</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">MSI</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Samsung</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">eMachines</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Гравитон</a>
+                                            </div>
                                         </div>
-                                        <span class="text-sm font-medium">Роутеры</span>
-                                        <div class="flex space-x-2">
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">TP-LINK</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mikrotik</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mercusys</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Xiaomi</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Asus</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Zyxel</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">D-Link</a>
-                                                    <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Huawei</a>
-                                         </div>
+                                        <div class="flex space-x-1">
+                                            <span class="text-sm font-medium">Роутеры:</span>
+                                            <div class="flex space-x-2">
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">TP-LINK</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mikrotik</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Mercusys</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Xiaomi</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Asus</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Zyxel</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">D-Link</a>
+                                                        <a href="#" @click="addModel" class="text-sm text-blue-600 hover:underline">Huawei</a>
+                                            </div>
+                                        </div>
                                         <input
                                             type="text"
                                             v-model="val.new_order.model.$model"
