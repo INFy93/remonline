@@ -69,11 +69,23 @@ class AdminController extends Controller
         return response()->json("Юзер успешно добавлен!");
     }
 
-    public function deleteUser($id)
+    public function blockUser($id)
     {
-        User::where('id', $id)->delete();
+       $user = User::where('id', $id)->first();
 
-        return response()->noContent();
+       if ($user->blocked == 0)
+       {
+           $user->blocked = 1;
+           $message = "Пользователь заблокирован.";
+       } else
+       {
+           $user->blocked = 0;
+           $message = "Пользователь разблокирован.";
+       }
+
+       $user->save();
+
+       return response()->json($message);
     }
 
     public function editUser($id)

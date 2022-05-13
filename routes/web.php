@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', array('before' => 'blocked'), function () {
+Route::get('/',  function () {
     if(Auth::check()) {
         return redirect('/orders');
     }
@@ -74,7 +74,7 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
     Route::get('/export_month', [AdminController::class, 'exportMonth']);
     Route::get('/users/all', [AdminController::class, 'getUsers']);
     Route::post('/user/add', [AdminController::class, 'addUser']);
-    Route::get('/user/delete/{id}', [AdminController::class, 'deleteUser']);
+    Route::get('/user/block/{id}', [AdminController::class, 'blockUser']);
     Route::get('/user/edit/{id}', [AdminController::class, 'editUser']);
     Route::post('/user/update', [AdminController::class, 'updateUser']);
     Route::get('/service/switch/{id}/{order_id}', [AdminController::class, 'switchService']);

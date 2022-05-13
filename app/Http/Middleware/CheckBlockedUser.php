@@ -18,7 +18,7 @@ class CheckBlockedUser
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user() && Auth::user()->blocked == 1){
-            App::abort(403); //Перекидываем на страницу доступ запрещен где написано что мол вы заблокированы
+            App::abort(403);
         }
 
         return $next($request);

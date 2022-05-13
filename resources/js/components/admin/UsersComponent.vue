@@ -70,15 +70,20 @@
                     <td
                         class="px-2 w-40 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
                     >
-                    <a
-                    href="#"
-                    v-if="user_id != user.id"
-                    class="text-blue-600 hover:underline"
-                    @click.prevent="openUser(user.id)"
-                    >
-                        {{ user.name }}
-                    </a>
-                    <span v-else>{{ user.name }}</span>
+                        <div class="flex space-x-1">
+                            <a
+                            href="#"
+                            v-if="user_id != user.id"
+                            class="text-blue-600 hover:underline"
+                            @click.prevent="openUser(user.id)"
+                            >
+                                {{ user.name }}
+                            </a>
+                            <span v-else>{{ user.name }}</span>
+                            <svg v-if="user.blocked == 1" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                            </svg>
+                        </div>
                     </td>
                     <td
                         class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
@@ -118,16 +123,20 @@
                     <td
                         class="px-2 py-3 text-sm whitespace-no-wrap border-b border-gray-200"
                     >
+                    <div v-if="user.id != 0">
                         <a href="#"
+                        v-if="user_id != user.id"
                         class="flex space-x-1 text-blue-600 hover:underline"
-                        onclick="confirm('Удалить пользователя?') || event.stopImmediatePropagation()"
+                        onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
                         @click.prevent="deleteUser(user.id)"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                             </svg>
-                            <span>Удалить</span>
+                            <span>{{ user.blocked == 0 ? 'Заблокировать' : 'Разблокировать' }}</span>
                         </a>
+                    </div>
+
                     </td>
                  </tr>
             </tbody>
@@ -151,6 +160,7 @@ export default {
         return {
             usersData: {},
             user_id: window.Laravel.user.id,
+            blocked: window.Laravel.user.blocked
         };
     },
     watch: {
@@ -168,8 +178,8 @@ export default {
             })
         },
         deleteUser(id) {
-            axios.get("dashboard/user/delete/" + id).then(response => {
-                this.toast.warning("Пользователь удален успешно!")
+            axios.get("dashboard/user/block/" + id).then(response => {
+                this.toast.warning(response.data)
                 this.getUsers();
             })
         },
