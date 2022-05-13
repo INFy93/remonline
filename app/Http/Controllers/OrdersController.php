@@ -46,8 +46,15 @@ class OrdersController extends Controller
         $story->event = $req->status_id;
         $story->user_id = $req->user_id;
         $story->order_id = $req->rem_id;
+
         $order->save();
         $story->save();
+
+        if ($req->status_id == '6')
+        {
+            \Stuff::sendSMS(str_replace(array('(', ')', ' ', '-'), '', $order->client_phone), $req->rem_id);
+        }
+
         return response()->json('Статус изменен');
     }
 

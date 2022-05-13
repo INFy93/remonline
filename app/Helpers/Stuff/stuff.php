@@ -2,6 +2,8 @@
 
 namespace App\Helpers\Stuff;
 
+use App\Models\Story;
+use Illuminate\Support\Facades\Http;
 class StuffMethods
 {
     public static function generateOrderCode()
@@ -33,5 +35,30 @@ class StuffMethods
         } else {
             return false;
         }
+    }
+
+    public static function sendSMS($phone, $order_id)
+    {
+        $secret = env('SECRET');
+
+        $send = Http::asForm()->post(env('SEND_SMS_URL'), [
+            'phone' => $phone,
+            'message' => 'Заказ '.$order_id.' выполнен! Просим оставить отзыв: crimeastar.net/otziv',
+            'key' => $secret
+        ]);
+        if ($send == 'sent') {
+            $story = new Story();
+
+            $story->order_id = $order_id;
+            $story->event = 8;
+            $story->user_id = 0;
+            $story->save();
+
+            return response()->json('Сообщение отправлено!');
+        } else
+        {
+            return false;
+        }
+
     }
 }
