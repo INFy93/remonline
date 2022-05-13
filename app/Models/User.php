@@ -24,7 +24,8 @@ class User extends Authenticatable
         'login',
         'last_login',
         'last_login_ip',
-        'is_admin'
+        'is_admin',
+        'blocked'
     ];
 
     /**

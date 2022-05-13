@@ -19,10 +19,11 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+Route::get('/', array('before' => 'blocked'), function () {
     if(Auth::check()) {
         return redirect('/orders');
-    } else {
+    }
+     else {
         return view('auth.login');
     }
 })->name('enter');
@@ -32,7 +33,7 @@ Route::get('/client', [CheckOrderController::class, 'index']);
 /* get order info by unique code */
 Route::get('/client/order/{code}', [CheckOrderController::class, 'getOrderForChecking']);
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => ['auth', 'is_blocked']], function() {
     /* Mikrotik conf generator */
     Route::view('/mikrotik', 'mikrotik');
     /* logout from app */
@@ -86,5 +87,3 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
 });
 
 Auth::routes();
-
-
