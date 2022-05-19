@@ -56,33 +56,7 @@
                 </svg>
                 <span>Экспорт всех заказов за месяц</span>
         </a>
-        <div class="mb-5 mt-3 flex flex-row">
-            <div class="flex justify-end items-center ml-auto space-x-5">
-                <label
-                    for="services"
-                    class="block text-m font-medium text-gray-900 dark:text-gray-400"
-                    >Сервис</label
-                >
-                <select
-                    id="services"
-                    v-model="selectedService"
-                    class="h-10 w-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                >
-                    <option value="all" class="border-b border-gray-400">
-                        Все сервисы
-                    </option>
-                    <option
-                        v-for="service in services"
-                        :key="service.id"
-                        :value="service.id"
-                        :selected="service.id == selectedService"
-                    >
-                        {{ service.service_name }}
-                    </option>
-                </select>
-            </div>
-        </div>
-        <div class="flex flex-row items-center space-x-3">
+        <div class="flex flex-row items-center mt-3">
             <div
                 v-if="ordersData.data"
                 class="bg-white rounded right-0 flex items-center w-full max-w-xl h-10 mb-2 p-2 shadow-sm border border-gray-200"
@@ -109,7 +83,7 @@
                     class="w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
                 />
             </div>
-            <div class="mb-2 ml-3">
+            <div class="flex items-center mb-2 ml-3">
                     <input
                             type="checkbox"
                             v-model="isOpen"
@@ -117,7 +91,7 @@
                         />
                     <span class="ml-2">Только открытые</span>
                 </div>
-            <div class="mb-2" v-if="checked.length">
+            <div class="mb-2 ml-3" v-if="checked.length">
                 <Menu as="div" class="relative inline-block text-left">
                     <div>
                         <MenuButton
@@ -196,7 +170,7 @@
                 </Menu>
             </div>
             <div v-if="selectPage">
-                <div class="mb-2" v-if="selectAll">
+                <div class="mb-2 ml-2" v-if="selectAll">
                     {{
                         declOfNum(checked.length, [
                             "Выбран",
@@ -214,7 +188,7 @@
                     }}
                     (это все, что есть...).
                 </div>
-                <div class="mb-2" v-else>
+                <div class="mb-2 ml-2" v-else>
                     {{
                         declOfNum(checked.length, [
                             "Выбран",
@@ -238,6 +212,31 @@
                         >Выбрать</a
                     >
                 </div>
+            </div>
+
+            <div class="flex justify-end items-center mb-2 ml-auto space-x-5">
+                <label
+                    for="services"
+                    class="block text-m font-medium text-gray-900 dark:text-gray-400"
+                    >Сервис</label
+                >
+                <select
+                    id="services"
+                    v-model="selectedService"
+                    class="h-10 w-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                    <option value="all" class="border-b border-gray-400">
+                        Все сервисы
+                    </option>
+                    <option
+                        v-for="service in services"
+                        :key="service.id"
+                        :value="service.id"
+                        :selected="service.id == selectedService"
+                    >
+                        {{ service.service_name }}
+                    </option>
+                </select>
             </div>
         </div>
         <story ref="openStoryPopup"></story>
