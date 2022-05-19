@@ -5,6 +5,7 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\WorkingWithOrdersController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AnalyticsController;
 use App\Http\Controllers\CheckOrderController;
 use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Artisan;
@@ -78,6 +79,7 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
     Route::get('/user/edit/{id}', [AdminController::class, 'editUser']);
     Route::post('/user/update', [AdminController::class, 'updateUser']);
     Route::get('/service/switch/{id}/{order_id}', [AdminController::class, 'switchService']);
+    Route::get('/analytics', [AnalyticsController::class, 'getAnalytics']);
     /* temporary */
     Route::get('/st', function () {
        Artisan::call('storage:link');
