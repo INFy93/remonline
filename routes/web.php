@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\WorkingWithOrdersController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CheckOrderController;
 use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Artisan;

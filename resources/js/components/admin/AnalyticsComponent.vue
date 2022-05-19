@@ -10,14 +10,8 @@ import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale, Li
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale)
 
 export default {
-  name: 'BarChart',
+  name: 'PieChart',
   components: { Pie },
-   setup() {
-      const chartOptions = {
-      responsive: true,
-      maintainAspectRatio: false
-    }
-   },
   data() {
     return {
       chartOptions: {

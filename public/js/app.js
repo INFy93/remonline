@@ -25432,15 +25432,9 @@ __webpack_require__.r(__webpack_exports__);
 
 chart_js__WEBPACK_IMPORTED_MODULE_0__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_0__.Title, chart_js__WEBPACK_IMPORTED_MODULE_0__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_0__.Legend, chart_js__WEBPACK_IMPORTED_MODULE_0__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_0__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_0__.LinearScale);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'BarChart',
+  name: 'PieChart',
   components: {
     Pie: vue_chartjs__WEBPACK_IMPORTED_MODULE_1__.Pie
-  },
-  setup: function setup() {
-    var chartOptions = {
-      responsive: true,
-      maintainAspectRatio: false
-    };
   },
   data: function data() {
     return {
