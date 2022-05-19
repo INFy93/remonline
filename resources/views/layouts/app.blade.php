@@ -11,7 +11,7 @@
     <link type="image/x-icon" href="/storage/img/favicon.ico" rel="shortcut icon">
     <link type="Image/x-icon" href="/storage/img/favicon.ico" rel="icon">
     <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="Refresh" content="300" />
+    <!-- <meta http-equiv="Refresh" content="300" /> -->
     <title>@yield('title')</title>
 </head>
 

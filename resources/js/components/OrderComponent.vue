@@ -572,6 +572,7 @@ export default {
             selectAll: false,
             url: "",
             showOnlyOpen: false,
+            timer: ''
         };
     },
     components: {
@@ -590,6 +591,7 @@ export default {
             this.services = response.data;
         });
         this.getOrders();
+        this.timer = setInterval(this.getOrders, 300000)
     },
     watch: {
         search: function (value) {
@@ -647,6 +649,7 @@ export default {
                     this.ordersData = response.data;
                 });
         },
+        cancelAutoUpdate: function() { clearInterval(this.timer) },
         deleteOrders() {
             axios.get("/orders/massDelete/" + this.checked).then((response) => {
                 if (response.status == 204) {

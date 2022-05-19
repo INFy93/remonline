@@ -25108,7 +25108,8 @@ moment__WEBPACK_IMPORTED_MODULE_4___default().locale("ru");
       selectPage: false,
       selectAll: false,
       url: "",
-      showOnlyOpen: false
+      showOnlyOpen: false,
+      timer: ''
     };
   },
   components: {
@@ -25129,6 +25130,7 @@ moment__WEBPACK_IMPORTED_MODULE_4___default().locale("ru");
       _this.services = response.data;
     });
     this.getOrders();
+    this.timer = setInterval(this.getOrders, 300000);
   },
   watch: {
     search: function search(value) {
@@ -25178,6 +25180,9 @@ moment__WEBPACK_IMPORTED_MODULE_4___default().locale("ru");
       axios__WEBPACK_IMPORTED_MODULE_2___default().get("/orders/all?s=" + this.s_id + "&page=" + page + "&search=" + this.search + "&selectedService=" + this.selectedService + "&openOrders=" + this.showOnlyOpen).then(function (response) {
         _this4.ordersData = response.data;
       });
+    },
+    cancelAutoUpdate: function cancelAutoUpdate() {
+      clearInterval(this.timer);
     },
     deleteOrders: function deleteOrders() {
       var _this5 = this;
