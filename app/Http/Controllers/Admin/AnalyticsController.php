@@ -22,7 +22,7 @@ class AnalyticsController extends Controller
 
         $open_orders = $orders->where('st', 1)->count();
 
-        $orders_in_work = $orders->where('st', 5)->count();
+        $orders_in_work = $orders->where('st', 2)->count();
 
         $orders_waiting = $orders->whereIn('st', [3, 4])->count();
 
@@ -30,14 +30,14 @@ class AnalyticsController extends Controller
 
         $closed_orders = $orders->where('st', 6)->count();
 
-        $canseled_orders = $orders->where('st', 7)->count();
+        $canceled_orders = $orders->where('st', 7)->count();
 
         return [
             'labels' => [ 'Новый', 'В работе', 'На согласовании/Ждет запчасть', 'Готов', 'Закрыт', 'Отказ'],
             'datasets' => array([
                 'label' => 'Статистика заказов',
                 'backgroundColor' => ['#3f83f8', '#0e9f6e', '#facc15', '#1f2937', '#4b5563', '#9ca3af'],
-                'data' => [$open_orders, $orders_in_work, $orders_waiting, $finished_orders, $closed_orders, $canseled_orders]
+                'data' => [$open_orders, $orders_in_work, $orders_waiting, $finished_orders, $closed_orders, $canceled_orders]
             ])
         ];
     }

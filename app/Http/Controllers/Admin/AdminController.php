@@ -20,13 +20,11 @@ class AdminController extends Controller
     {
         $all_orders = Order::all()->count();
 
-        $open_orders = Order::where([
-            ['status', '!=', 6],
-            ['status', '!=', 7]
-        ])
-        ->count();
+        $orders = Order::selectRaw('status as st')->get();
 
-        $current_orders = Order::where('status', 2)->count();
+        $open_orders = $orders->whereNotIn('st', [5, 6, 7])->count();
+
+        $current_orders = $orders->where('st', 2)->count();
 
         $result = [
             'all' => $all_orders,
