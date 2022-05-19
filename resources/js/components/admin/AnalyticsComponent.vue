@@ -8,6 +8,7 @@
                 id="inlineRadio1"
                 value="all"
                 v-model="selService"
+                checked
             />
             <label
                 class="form-check-label inline-block text-gray-800"
@@ -73,7 +74,7 @@ export default {
             },
             chartData: {},
             services: {},
-            selService: 1,
+            selService: 'all',
         };
     },
     watch: {

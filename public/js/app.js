@@ -25447,7 +25447,7 @@ chart_js__WEBPACK_IMPORTED_MODULE_0__.Chart.register(chart_js__WEBPACK_IMPORTED_
       },
       chartData: {},
       services: {},
-      selService: 1
+      selService: 'all'
     };
   },
   watch: {
@@ -28928,7 +28928,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "all",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.selService = $event;
-    })
+    }),
+    checked: ""
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.selService]]), _hoisted_3]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.services, function (service) {

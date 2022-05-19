@@ -11,7 +11,7 @@ class AnalyticsController extends Controller
     public function getAnalytics()
     {
         $service = request('service', 1);
-        
+
         if($service != 'all')
         {
             $orders = Order::where('service', '=', $service)->selectRaw('status as st')->get();
@@ -20,18 +20,24 @@ class AnalyticsController extends Controller
             $orders = Order::selectRaw('status as st')->get();
         }
 
-        $open_orders = $orders->whereNotIn('st', [6, 7])->count();
+        $open_orders = $orders->where('st', 1)->count();
+
+        $orders_in_work = $orders->where('st', 5)->count();
+
+        $orders_waiting = $orders->whereIn('st', [3, 4])->count();
 
         $finished_orders = $orders->where('st', 5)->count();
 
         $closed_orders = $orders->where('st', 6)->count();
 
+        $canseled_orders = $orders->where('st', 7)->count();
+
         return [
-            'labels' => [ 'Открытые заказы', 'Выполненные заказы', 'Закрытые заказы'],
+            'labels' => [ 'Новый', 'В работе', 'На согласовании/Ждет запчасть', 'Готов', 'Закрыт', 'Отказ'],
             'datasets' => array([
                 'label' => 'Статистика заказов',
-                'backgroundColor' => ['#3f83f8', '#1f2937', '#4b5563'],
-                'data' => [$open_orders, $finished_orders, $closed_orders]
+                'backgroundColor' => ['#3f83f8', '#0e9f6e', '#facc15', '#1f2937', '#4b5563', '#9ca3af'],
+                'data' => [$open_orders, $orders_in_work, $orders_waiting, $finished_orders, $closed_orders, $canseled_orders]
             ])
         ];
     }
