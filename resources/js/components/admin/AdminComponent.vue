@@ -38,7 +38,7 @@
                                 : 'text-blue-100 hover:bg-white/[0.12] hover:text-white',
                         ]"
                     >
-                        Шаблон печати
+                        Аналитика
                     </button>
                 </Tab>
             </TabList>
@@ -53,6 +53,11 @@
                     'bg-gray-100 rounded-xl p-3'
                 ]"
                 ><users></users></TabPanel>
+                <TabPanel
+                :class="[
+                    'bg-gray-100 rounded-xl p-3'
+                ]"
+                ><analytics></analytics></TabPanel>
             </TabPanels>
         </TabGroup>
     </div>

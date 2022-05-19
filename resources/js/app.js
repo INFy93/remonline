@@ -47,6 +47,7 @@ import Story from './components/admin/StoryComponent.vue'
 import Users from './components/admin/UsersComponent.vue'
 import AddUser from './components/admin/AddUserComponent.vue'
 import EditUser from './components/admin/EditUserComponent.vue'
+import Analytics from './components/admin/AnalyticsComponent.vue'
 
 const app = createApp({});
 const admin = createApp({});
@@ -69,5 +70,6 @@ admin.component('story', Story);
 admin.component('users', Users);
 admin.component('add-user', AddUser);
 admin.component('edit-user', EditUser);
+admin.component('analytics', Analytics);
 admin.mount('#admin')
 require('./bootstrap');
