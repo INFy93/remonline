@@ -661,8 +661,8 @@ export default {
                 }
             });
         },
-        change_status(status_id, rem_id) {
-            axios
+        async change_status(status_id, rem_id) {
+            await axios
                 .post("/change_status", {
                     status_id: status_id,
                     rem_id: rem_id,
@@ -673,8 +673,8 @@ export default {
                     this.getOrders(1);
                 });
         },
-        isOnlyOpen(data) {
-            this.showOnlyOpen = data;
+        async isOnlyOpen(data) {
+           this.showOnlyOpen = data;
         },
         dateFormat: function (value) {
             if (value) {
