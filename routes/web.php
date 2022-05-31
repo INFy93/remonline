@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AnalyticsController;
 use App\Http\Controllers\CheckOrderController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -37,6 +38,12 @@ Route::get('/client/order/{code}', [CheckOrderController::class, 'getOrderForChe
 Route::group(['middleware' => ['auth', 'is_blocked']], function() {
     /* profile page */
     Route::view('/profile', 'profile/index')->name('profile');
+    /* get user by id */
+    Route::get('/user/{id}', [ProfileController::class, 'getUser']);
+    /* save user data to db */
+    Route::post('/user/store', [ProfileController::class, 'saveData']);
+    /* change pass */
+    Route::post('/user/password/store', [ProfileController::class, 'changePassword']);
     /* logout from app */
     Route::get('/logout', [LoginController::class, 'logout']);
     /* main page */
