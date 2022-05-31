@@ -58,7 +58,7 @@
                     v-model="search"
                     name=""
                     id=""
-                    placeholder="Поиск по логину, модели или полной модели (все сервисы)"
+                    placeholder="Поиск по логину, модели или полной модели."
                     class="w-full pl-3 text-sm text-black border-transparent focus:border-transparent focus:ring-0 bg-transparent"
                 />
             </div>

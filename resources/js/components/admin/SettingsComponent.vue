@@ -596,8 +596,8 @@ export default {
         this.getData();
     },
     methods: {
-        getData() {
-            axios.get("/dashboard/total").then((response) => {
+        async getData() {
+            await axios.get("/dashboard/total").then((response) => {
                 this.totalData = response.data;
             });
         },

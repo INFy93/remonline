@@ -37,7 +37,7 @@ import OrderButton from './components/OrderButtonComponent.vue';
 import OpenOrders from './components/OpenOrdersComponent.vue';
 import EditOrder from './components/EditOrderComponent.vue';
 import Print from './components/PrintComponent.vue';
-
+import Profile from './components/profile/ProfileComponent.vue';
 
 import CheckOrder from './components/CheckingOrder.vue';
 
@@ -62,6 +62,7 @@ app.component('open-orders-component', OrderButton);
 app.component('edit-order-component', EditOrder);
 app.component('print-component', Print);
 app.component('check-order', CheckOrder);
+app.component('profile', Profile);
 app.mount('#app');
 
 admin.component('admin-component', Admin);
