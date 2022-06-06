@@ -646,6 +646,9 @@ export default {
                         this.showOnlyOpen
                 )
                 .then((response) => {
+                    if (response.status == 401) {
+                        window.location.href = '/login';
+                    }
                     this.ordersData = response.data;
                 });
         },

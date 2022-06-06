@@ -631,7 +631,7 @@ export default {
         },
         openStory(id) {
             this.$refs.openStoryPopup.openToStory(id);
-            this.order_id = id;
+
             //console.log(this.order_id)
         },
         deleteOrders() {

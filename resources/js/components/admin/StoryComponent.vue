@@ -44,76 +44,113 @@
                                         as="h2"
                                         class="flex-start text-xl font-medium leading-6 text-gray-900"
                                     >
-                                        Просмотр истории:
+                                        Данные по заказу:
                                         {{ order.client_login }}
                                     </DialogTitle>
                                     <div class="mb-2 space-x-4 float-right">
                                     </div>
                                 </div>
-                                <div class="grid">
+                                <div class="grid grid-cols-2">
                                     <div class="mt-2">
-                                        <div v-if="!story.length">
-                                            <img
-                                                src="/storage/img/load_table.svg"
-                                                style="width: 15%; margin: 0 auto;"
-                                            />
-                                        </div>
-                                        <div
-                                            v-else
-                                            v-for="(event, i) in story"
-                                            :key="event.id"
-                                            class="text-sm"
-                                        >
-                                            <div
-                                                v-if="i == '0'"
-                                                class="mt-2 mb-2"
-                                            >
-                                                <div
-                                                    class="block ml-auto mr-auto"
-                                                >
-                                                    <span>
-                                                        <strong>Cоздан:</strong>
-                                                    </span>
-                                                </div>
-
-                                                <span>
-                                                    <i>{{
-                                                        event.users.name
-                                                    }}</i>
-                                                    ->
-                                                    {{
-                                                        dateFormat(
-                                                            event.created_at
-                                                        )
-                                                    }}
-                                                </span>
-                                                <div class="mt-3"></div>
+                                        <div v-if="!order.client_login">
+                                                <img
+                                                    src="/storage/img/load_table.svg"
+                                                    style="width: 15%; margin: 0 auto;"
+                                                />
                                             </div>
-                                            <div v-else class="mt-2 mb-2">
-                                                <div
-                                                    class="block ml-auto mr-auto"
-                                                >
-                                                    <span>
-                                                        <strong>{{
-                                                            event.statuses.name
-                                                        }}</strong>
-                                                    </span>
-                                                </div>
-
-                                                <span>
-                                                    <i>{{
-                                                        event.users.name
-                                                    }}</i>
-                                                    ->
-                                                    {{
-                                                        dateFormat(
-                                                            event.created_at
-                                                        )
-                                                    }}
-                                                </span>
-                                            </div>
+                                        <div v-else>
+                                            <p>
+                                                <span class="font-medium">Логин клиента:</span> {{ order.client_login }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Телефон:</span> {{ order.client_phone }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Тип устройства:</span> {{ order.product }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Бренд:</span> {{ order.model }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Модель:</span> {{ order.model_full_name == null ? '-' : order.model_full_name }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Неисправность:</span> {{ order.malfunction }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Внешний вид:</span> {{ order.appearance }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Комплектация:</span> {{ order.product_complection == null ? '-' : order.product_complection }}
+                                            </p>
+                                            <p>
+                                                <span class="font-medium">Заметки:</span> {{ order.marks == null ? '-' : order.marks }}
+                                            </p>
                                         </div>
                                     </div>
+                                        <div class="mt-2">
+                                            <div v-if="!story.length">
+                                                <img
+                                                    src="/storage/img/load_table.svg"
+                                                    style="width: 15%; margin: 0 auto;"
+                                                />
+                                            </div>
+                                            <div
+                                                v-else
+                                                v-for="(event, i) in story"
+                                                :key="event.id"
+                                                class="text-sm"
+                                            >
+                                                <div
+                                                    v-if="i == '0'"
+                                                    class="mt-2 mb-2"
+                                                >
+                                                    <div
+                                                        class="block ml-auto mr-auto"
+                                                    >
+                                                        <span>
+                                                            <strong>Cоздан:</strong>
+                                                        </span>
+                                                    </div>
+
+                                                    <span>
+                                                        <i>{{
+                                                            event.users.name
+                                                        }}</i>
+                                                        ->
+                                                        {{
+                                                            dateFormat(
+                                                                event.created_at
+                                                            )
+                                                        }}
+                                                    </span>
+                                                    <div class="mt-3"></div>
+                                                </div>
+                                                <div v-else class="mt-2 mb-2">
+                                                    <div
+                                                        class="block ml-auto mr-auto"
+                                                    >
+                                                        <span>
+                                                            <strong>{{
+                                                                event.statuses.name
+                                                            }}</strong>
+                                                        </span>
+                                                    </div>
+
+                                                    <span>
+                                                        <i>{{
+                                                            event.users.name
+                                                        }}</i>
+                                                        ->
+                                                        {{
+                                                            dateFormat(
+                                                                event.created_at
+                                                            )
+                                                        }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
                                 <div class="mt-4 flex space-x-4 float-right">
                                     <button
@@ -149,9 +186,7 @@ import {
 export default {
     data: function () {
         return {
-            order: {
-                client_login: "",
-            },
+            order: {},
             show: false,
             clientData: {},
             order_id: "",
@@ -193,13 +228,14 @@ export default {
          },
         openToStory(id) {
             this.story = {}
+            this.order = {}
             this.openModal();
             axios.all([
                  axios.get("/order/edit/" + id),
                  axios.get("/order/story/" + id)
             ]).then(axios.spread((data1, data2) => {
 
-            this.order.client_login = data1.data.client_login;
+                this.order = data1.data;
                 this.story = data2.data;
             }));
         },
