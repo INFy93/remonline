@@ -1025,8 +1025,8 @@ input:checked + .toggle-bg {
 .w-6 {
   width: 1.5rem;
 }
-.w-36 {
-  width: 9rem;
+.w-40 {
+  width: 10rem;
 }
 .w-7 {
   width: 1.75rem;
@@ -1064,8 +1064,8 @@ input:checked + .toggle-bg {
 .w-80 {
   width: 20rem;
 }
-.w-40 {
-  width: 10rem;
+.w-36 {
+  width: 9rem;
 }
 .w-64 {
   width: 16rem;

@@ -88,7 +88,8 @@
                                             </p>
                                         </div>
                                     </div>
-                                        <div class="mt-2">
+                                        <div class="mt-2 ml-3">
+                                            <span class="font-medium">История</span>
                                             <div v-if="!story.length">
                                                 <img
                                                     src="/storage/img/load_table.svg"
