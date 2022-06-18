@@ -631,8 +631,6 @@ export default {
         },
         openStory(id) {
             this.$refs.openStoryPopup.openToStory(id);
-
-            //console.log(this.order_id)
         },
         deleteOrders() {
             axios.get("/orders/massDelete/" + this.checked).then((response) => {

@@ -185,7 +185,6 @@ export default {
         },
         openUser(id) {
             this.$refs.openEditPopup.editUser(id);
-            //console.log(this.order_id)
         },
         dateFormat: function (value) {
             if (value) {

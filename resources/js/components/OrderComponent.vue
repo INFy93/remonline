@@ -558,7 +558,6 @@ export default {
         return {
             ordersData: {},
             search: "",
-            order_id: "",
             services: {},
             selectedService:
                 window.Laravel.user.is_admin == 1
@@ -566,7 +565,6 @@ export default {
                     : window.Laravel.user.service_id,
             userService: window.Laravel.user.service_id,
             is_admin: window.Laravel.user.is_admin == 1 ? true : false,
-            s_id: "",
             checked: [],
             selectPage: false,
             selectAll: false,
@@ -625,18 +623,17 @@ export default {
             axios
                 .get("/orders/selectAll?service=" + this.selectedService)
                 .then((response) => {
-                    // console.log(response.data);
                     this.checked = [];
                     this.checked = response.data;
                     this.selectAll = true;
+                }).catch((response) => {
+                    this.toast.error("Сетевая ошибка " + response.status)
                 });
         },
         getOrders(page = 1) {
             axios
                 .get(
-                    "/orders/all?s=" +
-                        this.s_id +
-                        "&page=" +
+                    "/orders/all?page=" +
                         page +
                         "&search=" +
                         this.search +
@@ -650,6 +647,8 @@ export default {
                         window.location.href = '/login';
                     }
                     this.ordersData = response.data;
+                }).catch((response) => {
+                    this.toast.error("Сетевая ошибка " + response.status)
                 });
         },
         cancelAutoUpdate: function() { clearInterval(this.timer) },
@@ -662,7 +661,9 @@ export default {
                 } else {
                     this.toast.error("Ошибка удаления заказов.");
                 }
-            });
+            }).catch((response) => {
+                    this.toast.error("Сетевая ошибка " + response.status)
+                });
         },
         async change_status(status_id, rem_id) {
             await axios
@@ -673,7 +674,9 @@ export default {
                 })
                 .then((response) => {
                     this.$refs.open.getOpenOrders();
-                    this.getOrders(1);
+                    this.getOrders();
+                }).catch((response) => {
+                    this.toast.error("Сетевая ошибка " + response.status)
                 });
         },
         async isOnlyOpen(data) {
@@ -688,8 +691,6 @@ export default {
         },
         openEdit(id) {
             this.$refs.openEditPopup.openToEdit(id);
-            this.order_id = id;
-            //console.log(this.order_id)
         },
         declOfNum(number, titles) {
             let cases = [2, 0, 1, 1, 1, 2];

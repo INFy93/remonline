@@ -25117,12 +25117,10 @@ moment__WEBPACK_IMPORTED_MODULE_5___default().locale("ru");
     return {
       ordersData: {},
       search: "",
-      order_id: "",
       services: {},
       selectedService: window.Laravel.user.is_admin == 1 ? "all" : window.Laravel.user.service_id,
       userService: window.Laravel.user.service_id,
       is_admin: window.Laravel.user.is_admin == 1 ? true : false,
-      s_id: "",
       checked: [],
       selectPage: false,
       selectAll: false,
@@ -25186,22 +25184,25 @@ moment__WEBPACK_IMPORTED_MODULE_5___default().locale("ru");
       var _this3 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_3___default().get("/orders/selectAll?service=" + this.selectedService).then(function (response) {
-        // console.log(response.data);
         _this3.checked = [];
         _this3.checked = response.data;
         _this3.selectAll = true;
+      })["catch"](function (response) {
+        _this3.toast.error("Сетевая ошибка " + response.status);
       });
     },
     getOrders: function getOrders() {
       var _this4 = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios__WEBPACK_IMPORTED_MODULE_3___default().get("/orders/all?s=" + this.s_id + "&page=" + page + "&search=" + this.search + "&selectedService=" + this.selectedService + "&openOrders=" + this.showOnlyOpen).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default().get("/orders/all?page=" + page + "&search=" + this.search + "&selectedService=" + this.selectedService + "&openOrders=" + this.showOnlyOpen).then(function (response) {
         if (response.status == 401) {
           window.location.href = '/login';
         }
 
         _this4.ordersData = response.data;
+      })["catch"](function (response) {
+        _this4.toast.error("Сетевая ошибка " + response.status);
       });
     },
     cancelAutoUpdate: function cancelAutoUpdate() {
@@ -25220,6 +25221,8 @@ moment__WEBPACK_IMPORTED_MODULE_5___default().locale("ru");
         } else {
           _this5.toast.error("Ошибка удаления заказов.");
         }
+      })["catch"](function (response) {
+        _this5.toast.error("Сетевая ошибка " + response.status);
       });
     },
     change_status: function change_status(status_id, rem_id) {
@@ -25238,7 +25241,9 @@ moment__WEBPACK_IMPORTED_MODULE_5___default().locale("ru");
                 }).then(function (response) {
                   _this6.$refs.open.getOpenOrders();
 
-                  _this6.getOrders(1);
+                  _this6.getOrders();
+                })["catch"](function (response) {
+                  _this6.toast.error("Сетевая ошибка " + response.status);
                 });
 
               case 2:
@@ -25277,7 +25282,6 @@ moment__WEBPACK_IMPORTED_MODULE_5___default().locale("ru");
     },
     openEdit: function openEdit(id) {
       this.$refs.openEditPopup.openToEdit(id);
-      this.order_id = id; //console.log(this.order_id)
     },
     declOfNum: function declOfNum(number, titles) {
       var cases = [2, 0, 1, 1, 1, 2];
@@ -25798,7 +25802,7 @@ moment__WEBPACK_IMPORTED_MODULE_6___default().locale("ru");
       });
     },
     openStory: function openStory(id) {
-      this.$refs.openStoryPopup.openToStory(id); //console.log(this.order_id)
+      this.$refs.openStoryPopup.openToStory(id);
     },
     deleteOrders: function deleteOrders() {
       var _this6 = this;
@@ -25989,7 +25993,7 @@ moment__WEBPACK_IMPORTED_MODULE_2___default().locale("ru");
       });
     },
     openUser: function openUser(id) {
-      this.$refs.openEditPopup.editUser(id); //console.log(this.order_id)
+      this.$refs.openEditPopup.editUser(id);
     },
     dateFormat: function dateFormat(value) {
       if (value) {
