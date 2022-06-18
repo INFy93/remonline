@@ -33,14 +33,16 @@ class WorkingWithOrdersController extends Controller
             'product' => $req->order['product'],
             'product_complection' => $req->order['product_complection'],
             'status' => 1,
-            //temporary
             'manager_id' => $req->order['manager_id'],
             'service' => Auth::user()->service_id,
             'created_at' =>  date("Y-m-d H:i:s"),
             'updated_at' =>  date("Y-m-d H:i:s"),
         ];
+
         Order::insert($new_order);
+
         $order = Order::orderBy('id', 'desc')->first();
+
         $story = [
             'user_id' => $req->order['manager_id'],
             'order_id' => $order->id,
@@ -49,6 +51,7 @@ class WorkingWithOrdersController extends Controller
             'updated_at' =>  date("Y-m-d H:i:s"),
         ];
         Story::insert($story);
+
         return response()->json("Заказ успешно добавлен");
     }
 

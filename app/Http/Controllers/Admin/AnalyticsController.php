@@ -20,6 +20,8 @@ class AnalyticsController extends Controller
             $orders = Order::selectRaw('status as st')->get();
         }
 
+        //ёбаная порнуха, переделать!!! мне не нравится эта мешанина переменных!!!
+
         $open_orders = $orders->where('st', 1)->count();
 
         $orders_in_work = $orders->where('st', 2)->count();

@@ -33,7 +33,7 @@ class OrdersController extends Controller
         ->search(trim($search_term))
         ->orderBy('id', 'desc')
         ->paginate(30);
-       // dd($orders);
+
         return response()->json($orders);
     }
 
@@ -43,6 +43,7 @@ class OrdersController extends Controller
         $story = new Story();
 
         $order->status = $req->status_id;
+
         $story->event = $req->status_id;
         $story->user_id = $req->user_id;
         $story->order_id = $req->rem_id;
