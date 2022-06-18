@@ -77,15 +77,25 @@ Route::group(['middleware' => ['auth', 'is_blocked']], function() {
 Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
     /* dashboard main page */
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    /* collecting count of orders on dashboard */
     Route::get('/total', [AdminController::class, 'getTotalData']);
+    /* MAYBE YES, MAYBE NO... */
     Route::get('/options', [AdminController::class, 'getAllSettings']);
+    /* export to excel orders: month collection */
     Route::get('/export_month', [AdminController::class, 'exportMonth']);
+    /* get all users */
     Route::get('/users/all', [AdminController::class, 'getUsers']);
+    /* add new user */
     Route::post('/user/add', [AdminController::class, 'addUser']);
+    /* block user */
     Route::get('/user/block/{id}', [AdminController::class, 'blockUser']);
+    /* edit user */
     Route::get('/user/edit/{id}', [AdminController::class, 'editUser']);
+    /* POST -> update user */
     Route::post('/user/update', [AdminController::class, 'updateUser']);
+    /* switch service */
     Route::get('/service/switch/{id}/{order_id}', [AdminController::class, 'switchService']);
+    /* get data to analytics pie graph */
     Route::get('/analytics', [AnalyticsController::class, 'getAnalytics']);
     /* temporary */
     Route::get('/st', function () {
@@ -94,5 +104,5 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'dashboard'], function() {
        return Artisan::output();
     });;
 });
-
+/* if you dont know, what is it, I have bad news to you... */
 Auth::routes();
